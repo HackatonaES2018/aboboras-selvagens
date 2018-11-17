@@ -15,15 +15,15 @@ import { MonoText } from '../components/StyledText';
 export default class InitialScreen extends React.Component {
   static navigationOptions = {
     header: null,
-  };
+  }; 
 
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={{paddingTop:400}}>
+        <View style={{paddingTop:400, padding: 20}}>
           <Button onPress={this.navigateLogin}>Já possuo conta</Button>
-          <View style={{paddingTop:20}}>
+          <View style={{paddingTop:15}}>
             <Button onPress={this.navigateSimular}>Ainda não possuo conta</Button>
           </View>
         </View>  
