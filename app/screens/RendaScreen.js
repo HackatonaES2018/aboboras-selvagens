@@ -8,10 +8,11 @@ import {
   TouchableOpacity,
   View  
 } from 'react-native';
+import { TextField } from 'react-native-material-textfield';
 import { WebBrowser } from 'expo';
 import Button from '../components/Button';
 
-export default class InitialScreen extends React.Component {
+export default class RendaScreen extends React.Component {
   static navigationOptions = {
     header: null,
   }; 
@@ -20,32 +21,27 @@ export default class InitialScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={{paddingTop:400, padding: 20}}>
-          <Button onPress={this.navigateLogin}>Já possuo conta</Button>
-          <View style={{paddingTop:15}}>
-            <Button onPress={this.navigateSimular}>Ainda não possuo conta</Button>
-          </View>
+        <View style={styles.fieldText}>
+          <TextField tintColor='#002d72' keyboardType='number' keyboardType='number-pad' label='Digite aqui'/>
+        </View>
+        <View style={{flex:1, justifyContent:'flex-end'}}>
+          <Button onPress={this.finalizarCadastro}>Finalizar Cadastro</Button>
         </View>  
         </ScrollView>
       </View>
     );
   }
 
-
-  navigateLogin = () => {
+  finalizarCadastro = () => {
     const {navigate} = this.props.navigation;
-    navigate('Login')
+    navigate('Wallet_MainScreen')
   };
 
-  navigateSimular = () => {
-      const{navigate} = this.props.navigation;
-      navigate('Simular')
-  }
 }
 
 const styles = StyleSheet.create({
-  touchableButton: {
-    paddingTop: 200
+  fieldText: {
+      padding: 30
   },
   container: {
     flex: 1,

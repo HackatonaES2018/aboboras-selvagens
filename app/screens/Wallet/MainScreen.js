@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import { WebBrowser, LinearGradient } from 'expo';
 import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
-import { MonoText } from '../../components/StyledText';
 
 export default class MainScreen extends React.Component {
   static navigationOptions = {
