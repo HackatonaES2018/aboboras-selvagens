@@ -16,6 +16,12 @@ import HeaderWallet from "../../components/Wallet/HeaderWallet";
 
 
 export default class SolicitarCreditoScreen extends React.Component {
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: navigation.getParam('' ,'Solicitar Crédito'),
+        };
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -34,12 +40,14 @@ export default class SolicitarCreditoScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <HeaderWallet/>
                 <View>
                     <View style={styles.titleContainer}>
                         <Text style={styles.title}> Solicitar Crédito </Text>
                     </View>
                     <View style={styles.sliderContainer}>
+                        <View style={styles.titleContainer}>
+                            <Text style={styles.title}> Valor </Text>
+                        </View>
                         <Slider
                             step={1}
                             maximumValue={100}
