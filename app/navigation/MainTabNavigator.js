@@ -14,8 +14,11 @@ const LoginStack = createStackNavigator({
   Initial: InitialScreen,
   Login: LoginScreen,
   Register: RegisterScreen,
-  UsarCreditoScreen: UsarCreditoScreen
-});
+  UsarCreditoScreen: UsarCreditoScreen,
+  SimularScreen: SimularScreen
+}, {
+    initialRouteName: 'Initial'
+  });
 
 
 
