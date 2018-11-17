@@ -11,7 +11,7 @@ const LoginStack = createStackNavigator({
   Register: RegisterScreen,
   Simular: SimularScreen
 }, {
-    initialRouteName: 'Login'
+    initialRouteName: 'Simular'
   });
 
 

@@ -6,7 +6,8 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
+    ActivityIndicator
 } from 'react-native';
 
 
@@ -22,13 +23,16 @@ export default class RegisterScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'baseline' }}>
+                        <View style={{ flex: 1 }}>
+                            <TextField tintColor='#002d72' keyboardType='number' keyboardType='number-pad' label='CPF' />
+                        </View>
 
-                    <TextField label='CPF' />
 
-                    <TouchableOpacity>
-                        <Text style={{ textAlign: 'center', fontSize: 18, fontFamily: 'lato-regular', color: '#002d72' }}>Confirmar</Text>
-                    </TouchableOpacity>
-
+                        <TouchableOpacity style={{ marginTop: 10 }}>
+                            <Text style={{ marginLeft: 30, textAlign: 'center', fontSize: 18, fontFamily: 'lato-regular', color: '#002d72' }}>Confirmar</Text>
+                        </TouchableOpacity>
+                    </View>
                 </ScrollView>
 
 
