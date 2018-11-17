@@ -44,10 +44,10 @@ export default class RegisterScreen extends React.Component {
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
+          <Text style={styles.tabBarInfoText}>Para continuar envie um documento</Text>
 
           <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
+            <MonoText style={styles.codeHighlightText}>CPF, CNH, RG...</MonoText>
           </View>
         </View>
       </View>
