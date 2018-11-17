@@ -6,8 +6,9 @@ import InitialScreen from '../screens/InitialScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import SimularScreen from '../screens/SimularScreen';
-import ConfirmarCadastro from '../screens/ConfirmarCadastro'
+import ConfirmarCadastroScreen from '../screens/ConfirmarCadastroScreen'
 import MainScreen from '../screens/Wallet/MainScreen';
+import SenhaScreen from '../screens/SenhaScreen'
 
 const LoginStack = createStackNavigator({
   Wallet_MainScreen: MainScreen,
@@ -15,9 +16,10 @@ const LoginStack = createStackNavigator({
   Login: LoginScreen,
   Register: RegisterScreen,
   Simular: SimularScreen,
-  ConfirmarCadastro: ConfirmarCadastro
+  ConfirmarCadastroScreen: ConfirmarCadastroScreen,
+  SenhaScreen: SenhaScreen
 }, {
-    initialRouteName: 'ConfirmarCadastro'
+    initialRouteName: 'SenhaScreen'
    });
 
 

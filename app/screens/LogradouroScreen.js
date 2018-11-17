@@ -25,8 +25,6 @@ export default class HomeScreen extends React.Component {
           <TextField label="Data de Nascimento" value="23/10/1997" />
           <TextField label="Tipo documento" value="CNH" />
           <TextField label="Número" value="06606570400" />
-          <TextField label="Senha" secureTextEntry  />
-          <TextField label="Confirmar senha" secureTextEntry />
           
 
           <View style={{paddingTop:30}}>
