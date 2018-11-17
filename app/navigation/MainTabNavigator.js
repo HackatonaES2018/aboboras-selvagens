@@ -6,12 +6,14 @@ import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import MainScreen from '../screens/Wallet/MainScreen';
 import SolicitarCreditoScreen from "../screens/Wallet/SolicitarCreditoScreen";
+import UsarCreditoScreen from '../screens/Wallet/UsarCreditoScreen';
 
 const LoginStack = createStackNavigator({
   Wallet_MainScreen: MainScreen,
   Login: LoginScreen,
   Register: RegisterScreen,
-  SolicitarCredito: SolicitarCreditoScreen
+  SolicitarCredito: SolicitarCreditoScreen,
+  UsarCreditoScreen: UsarCreditoScreen
 });
 
 

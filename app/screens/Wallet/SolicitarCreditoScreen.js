@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
 import {responsiveScalar} from '../../util/ResponsiveUtility'
+import HeaderWallet from "../../components/Wallet/HeaderWallet";
 
 
 export default class SolicitarCreditoScreen extends React.Component {
@@ -33,6 +34,7 @@ export default class SolicitarCreditoScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <HeaderWallet/>
                 <View>
                     <View style={styles.titleContainer}>
                         <Text style={styles.title}> Solicitar Crédito </Text>
