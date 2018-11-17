@@ -7,8 +7,9 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Button
 } from 'react-native';
-import { WebBrowser } from 'expo';
+import { WebBrowser, LinearGradient } from 'expo';
 
 import { MonoText } from '../../components/StyledText';
 
@@ -21,26 +22,38 @@ export default class MainScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
+          <LinearGradient
+              colors={['#1e5799', '#3b5998', '#fff']}
+            >
+            <View style={styles.balanceContainer}>
+                <Text style={styles.walletTitle}>Carteira Portocred</Text>
+                <Text style={styles.balanceText}>R$ 0,00</Text>
             </View>
+          </LinearGradient>
 
-            <Text style={styles.getStartedText}>
-              Change this teand your app will automatically reload.
-            </Text>
+          <View style={{flexDirection:'row',flex:1, justifyContent:'space-around'}}>
+            <Button
+              title="Solicitar Crédito"
+              accessibilityLabel="Learn more about this purple button"
+            />
+            <Button
+              title="Transferir"
+              accessibilityLabel="Learn more about this purple button"
+            />
           </View>
 
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
+          <View style={styles.welcomeContainer}>
+            <Image
+              source={
+                __DEV__
+                  ? require('../../assets/images/portocred-azul.png')
+                  : require('../../assets/images/robot-prod.png')
+              }
+              style={styles.welcomeImage}
+            />
+            <Text>Carteira Portocred</Text>
           </View>
+
         </ScrollView>
       </View>
     );
@@ -85,6 +98,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  walletTitle: {
+    color:'#fff',
+    fontSize: 21,
+
+  },
+  balanceText: {
+    color:'#fff',
+    fontSize: 30
+  },
   developmentModeText: {
     marginBottom: 20,
     color: 'rgba(0,0,0,0.4)',
@@ -95,10 +117,10 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30,
   },
-  welcomeContainer: {
+  balanceContainer: {
     alignItems: 'center',
     marginTop: 10,
-    marginBottom: 20,
+    marginBottom: 20
   },
   welcomeImage: {
     width: 100,
