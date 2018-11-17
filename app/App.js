@@ -3,6 +3,7 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 
+
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
@@ -34,6 +35,7 @@ export default class App extends React.Component {
         require('./assets/images/robot-prod.png'),
       ]),
       Font.loadAsync({
+        'lato-regular': require('./assets/fonts/Lato-Regular.ttf'),
         // This is the font that we are using for our tab bar
         ...Icon.Ionicons.font,
         // We include SpaceMono because we use it in HomeScreen.js. Feel free

@@ -6,12 +6,12 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View,
+    View
 } from 'react-native';
 
 
 import { TextField } from 'react-native-material-textfield';
-
+import Button from '../components/Button';
 
 export default class RegisterScreen extends React.Component {
     static navigationOptions = {
@@ -24,6 +24,8 @@ export default class RegisterScreen extends React.Component {
                 <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                     <TextField label='CPF' />
                 </ScrollView>
+
+                <Button>Confirmar</Button>
             </View>
         );
     }
