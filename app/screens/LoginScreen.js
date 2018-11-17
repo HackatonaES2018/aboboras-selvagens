@@ -7,11 +7,11 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Button  
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
+import { TextField } from 'react-native-material-textfield';
 import { MonoText } from '../components/StyledText';
+import Button from '../components/Button';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -31,14 +31,22 @@ export default class HomeScreen extends React.Component {
               }
               style={styles.welcomeImage}
             />
+            
           </View>
 
-          <Button
-            onPress={this.onPressLearnMore}
-            title="Próxima Etapa"
-            color="blue"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          <TextField label='CPF' keyboardType='number' keyboardType='number-pad' />
+          <TextField label='Senha' />
+          <Text style={{textAlign:'right', color:'#8d8f8a'}}>Esqueceu sua senha?</Text>
+
+          <View style={{paddingTop:30}}>
+          <Button>
+            Entrar
+          </Button>
+
+          <TouchableOpacity>
+            <Text style={{paddingTop:30, textAlign:'center', color:'#8d8f8a'}}>Entrar utilizando biometria digital</Text>
+          </TouchableOpacity>
+          </View>
         </ScrollView>
       </View>
     );
@@ -86,7 +94,8 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    padding: 10,
+    backgroundColor: '#fbfbfb',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -101,73 +110,14 @@ const styles = StyleSheet.create({
   welcomeContainer: {
     alignItems: 'center',
     marginTop: 10,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 320,
+    height: 200,
     resizeMode: 'contain',
     marginTop: 3,
-    marginLeft: -10,
+    marginLeft: 0,
   },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
-  },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
-  },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
-  },
+  
 });
