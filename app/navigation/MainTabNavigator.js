@@ -16,12 +16,13 @@ const LoginStack = createStackNavigator({
   Initial: InitialScreen,
   Login: LoginScreen,
   Register: RegisterScreen,
-  Simular: SimularScreen,
+  UsarCreditoScreen: UsarCreditoScreen,
+  SimularScreen: SimularScreen,
   ConfirmarCadastroScreen: ConfirmarCadastroScreen,
-  SenhaScreen: SenhaScreen
 }, {
-    initialRouteName: 'SenhaScreen'
-   });
+    initialRouteName: 'Initial'
+  });
+
 
 
 

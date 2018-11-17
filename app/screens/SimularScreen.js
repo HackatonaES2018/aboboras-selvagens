@@ -69,21 +69,21 @@ export default class RegisterScreen extends React.Component {
                                 <Text style={{ marginTop: 10, fontSize: 20, fontFamily: 'lato-regular', color: '#002d72', alignSelf: 'center', marginHorizontal: 50 }}>
                                     Limite pré-aprovado de:
                             </Text>
-                                <Text style={{ marginTop: 15, fontSize: 30, fontFamily: 'lato-regular', color: '#002d72', alignSelf: 'center', marginHorizontal: 50 }}>
+                                <Text style={{ marginTop: 15, fontSize: 35, fontFamily: 'lato-regular', color: '#84bd00', alignSelf: 'center', marginHorizontal: 50 }}>
                                     {`R$ ${this.state.dados['cet']['valor-total']}`}
                                 </Text>
 
-                                <Text style={{ marginTop: 25, fontSize: 14, fontFamily: 'lato-regular', alignSelf: 'center', marginHorizontal: 30 }}>
+                                <Text style={{ marginTop: 25, fontSize: 14, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 30 }}>
                                     Realize o cadastro para retirar o crédito ou
                                 </Text>
-                                <Text style={{ marginTop: 5, fontSize: 14, fontFamily: 'lato-regular', alignSelf: 'center', marginHorizontal: 30 }}>
-                                    solicitar uma nova proposta
+                                <Text style={{ marginTop: 5, fontSize: 14, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 30 }}>
+                                    solicitar uma nova proposta.
                                 </Text>
 
 
                             </View>
                             <View style={{}}>
-                                <Button>Cadastre-se</Button>
+                                <Button onPress={() => this.props.navigation.navigate('ConfirmarCadastroScreen')}>Cadastre-se</Button>
                             </View>
                         </View>
 

@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View  
+  View
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import Button from '../components/Button';
@@ -15,18 +15,18 @@ import { MonoText } from '../components/StyledText';
 export default class InitialScreen extends React.Component {
   static navigationOptions = {
     header: null,
-  }; 
+  };
 
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={{paddingTop:400, padding: 20}}>
-          <Button onPress={this.navigateLogin}>Já possuo conta</Button>
-          <View style={{paddingTop:15}}>
-            <Button onPress={this.navigateSimular}>Ainda não possuo conta</Button>
+          <View style={{ paddingTop: 400, padding: 20 }}>
+            <Button onPress={this.navigateLogin}>Já possuo conta</Button>
+            <View style={{ paddingTop: 15 }}>
+              <Button onPress={this.navigateSimular}>Ainda não possuo conta</Button>
+            </View>
           </View>
-        </View>  
         </ScrollView>
       </View>
     );
@@ -56,13 +56,13 @@ export default class InitialScreen extends React.Component {
   }
 
   navigateLogin = () => {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     navigate('Login')
   };
 
   navigateSimular = () => {
-      const{navigate} = this.props.navigation;
-      navigate('Simular')
+    const { navigate } = this.props.navigation;
+    navigate('SimularScreen')
   }
 
   _handleLearnMorePress = () => {
