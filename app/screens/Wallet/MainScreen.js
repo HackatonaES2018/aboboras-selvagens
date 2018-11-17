@@ -10,7 +10,7 @@ import {
   Button
 } from 'react-native';
 import { WebBrowser, LinearGradient } from 'expo';
-
+import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
 import { MonoText } from '../../components/StyledText';
 
 export default class MainScreen extends React.Component {
@@ -23,7 +23,7 @@ export default class MainScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <LinearGradient
-              colors={['#1e5799', '#3b5998', '#fff']}
+              colors={['#1e5799', '#3b5998', '#002d72']}
             >
             <View style={styles.balanceContainer}>
                 <Text style={styles.walletTitle}>Carteira Portocred</Text>
@@ -31,27 +31,38 @@ export default class MainScreen extends React.Component {
             </View>
           </LinearGradient>
 
-          <View style={{flexDirection:'row',flex:1, justifyContent:'space-around'}}>
-            <Button
-              title="Solicitar Crédito"
-              accessibilityLabel="Learn more about this purple button"
-            />
-            <Button
-              title="Transferir"
-              accessibilityLabel="Learn more about this purple button"
-            />
+          <View style={{
+            flexDirection:'row',
+            flex:1,
+            justifyContent:'space-around',
+            borderBottomColor:'#e4e4e4',
+            borderBottomWidth:1,
+            paddingBottom:10,
+            paddingTop:10
+            }}>
+            <TouchableOpacity style={{flexDirection:'row'}}>
+              <MaterialCommunityIcons color="green" name="credit-card-plus" size={32}></MaterialCommunityIcons>
+              <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Solicitar Crédito</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{flexDirection:'row'}}>
+              <MaterialCommunityIcons color="red" name="bank-transfer-out" size={32}></MaterialCommunityIcons>
+              <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Transferir</Text>
+            </TouchableOpacity>
+
           </View>
 
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../../assets/images/portocred-azul.png')
-                  : require('../../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
-            <Text>Carteira Portocred</Text>
+          <View style={{
+            flexDirection:'row',
+            flex:1,
+            justifyContent:'space-around',
+            borderBottomColor:'#e4e4e4',
+            borderBottomWidth:1,
+            paddingTop:10,
+            paddingBottom:10
+            }}>
+            <Text>Limite de Crédito: R$ 2.000,00</Text>
+
           </View>
 
         </ScrollView>
@@ -96,12 +107,21 @@ export default class MainScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fbfbfb'
+  },
+  historyContainer: {
+    marginTop:20,
+    marginBottom:10,
+    borderTopColor:'#e4e4e4',
+    borderTopWidth:1
   },
   walletTitle: {
     color:'#fff',
     fontSize: 21,
-
+  },
+  historyTitle: {
+    color:'#002d72',
+    fontSize: 21,
   },
   balanceText: {
     color:'#fff',
@@ -114,12 +134,9 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     textAlign: 'center',
   },
-  contentContainer: {
-    paddingTop: 30,
-  },
   balanceContainer: {
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 30,
     marginBottom: 20
   },
   welcomeImage: {
