@@ -15,7 +15,7 @@ import { MonoText } from '../../components/StyledText';
 import { responsiveScalar, responsiveHeight, responsiveWidth } from '../../util/ResponsiveUtility'
 import HeaderWallet from '../../components/Wallet/HeaderWallet';
 
-export default class MainScreen extends React.Component {
+export default class UsarCreditoScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -33,54 +33,27 @@ export default class MainScreen extends React.Component {
               justifyContent:'space-around',
               borderBottomColor:'#e4e4e4',
               borderBottomWidth:1,
-              paddingBottom:10,
-              paddingTop:10
-              }}>
-              <TouchableOpacity style={{flexDirection:'row'}}>
-                <MaterialCommunityIcons color="green" name="credit-card-plus" size={32}></MaterialCommunityIcons>
-                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Solicitar Crédito</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity onPress={this.onPressUsarCredito} style={{flexDirection:'row'}}>
-                <MaterialCommunityIcons color="red" name="bank-transfer-out" size={32}></MaterialCommunityIcons>
-                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Usar Crédito</Text>
-              </TouchableOpacity>
-
-            </View>
-
-            <View style={{
-              flexDirection:'row',
-              flex:1,
-              justifyContent:'space-around',
-              borderBottomColor:'#e4e4e4',
-              borderBottomWidth:1,
               paddingTop:10,
               paddingBottom:10
               }}>
-              <Text>Limite de Crédito: R$ 2.000,00</Text>
-
+              <Text>Usar Crédito</Text>
             </View>
 
+            <TouchableOpacity style={{flexDirection:'row'}}>
+                <MaterialCommunityIcons name="barcode-scan" size={48}></MaterialCommunityIcons>
+                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Pagar Boleto</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{flexDirection:'row'}}>
+                <MaterialCommunityIcons name="wallet" size={48}></MaterialCommunityIcons>
+                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Outra Carteira Digital</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{flexDirection:'row'}}>
+                <MaterialCommunityIcons name="bank" size={48}></MaterialCommunityIcons>
+                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Conta-Corrente</Text>
+            </TouchableOpacity>
           </ScrollView>
-        </View>
-        <View style={{flex:responsiveScalar(1/10), 
-          flexDirection:'row', 
-          justifyContent:'space-around', 
-          paddingTop:10,
-          backgroundColor: '#84bd00'
-          }}>
-            <TouchableOpacity style={styles.buttonsFooter}>
-                <MaterialCommunityIcons color="#456300" name="history" size={32}></MaterialCommunityIcons>
-                <Text style={styles.buttonsFooterText}>Histórico</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonsFooter}>
-                <MaterialCommunityIcons color="#456300" name="chart-bar" size={32}></MaterialCommunityIcons>
-                <Text style={styles.buttonsFooterText}>Saldo Devedor</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonsFooter}>
-                <MaterialCommunityIcons color="#456300" name="logout" size={32}></MaterialCommunityIcons>
-                <Text style={styles.buttonsFooterText}>Sair</Text>
-            </TouchableOpacity>
         </View>
       </View>
 
@@ -88,8 +61,7 @@ export default class MainScreen extends React.Component {
   }
 
   onPressUsarCredito = () => {
-    const {navigate} = this.props.navigation;
-    navigate('UsarCreditoScreen')
+    
   }
 
   _maybeRenderDevelopmentModeWarning() {
