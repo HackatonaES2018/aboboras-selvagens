@@ -22,10 +22,16 @@ export default class RegisterScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+
                     <TextField label='CPF' />
+
+                    <TouchableOpacity>
+                        <Text style={{ textAlign: 'center', fontSize: 18, fontFamily: 'lato-regular', color: '#002d72' }}>Confirmar</Text>
+                    </TouchableOpacity>
+
                 </ScrollView>
 
-                <Button>Confirmar</Button>
+
             </View>
         );
     }
