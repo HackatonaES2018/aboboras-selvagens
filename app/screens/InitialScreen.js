@@ -22,9 +22,9 @@ export default class InitialScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={{ paddingTop: 400, padding: 20 }}>
-            <Button onPress={this.navigateSimular}>Já possuo conta</Button>
+            <Button onPress={this.navigateLogin}>Já possuo conta</Button>
             <View style={{ paddingTop: 15 }}>
-              <Button onPress={this.navigateLogin}>Ainda não possuo conta</Button>
+              <Button onPress={this.navigateSimular}>Ainda não possuo conta</Button>
             </View>
           </View>
         </ScrollView>
