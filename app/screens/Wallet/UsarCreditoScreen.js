@@ -6,30 +6,62 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View  
+  View,
+  Button
 } from 'react-native';
-import { WebBrowser } from 'expo';
-import Button from '../components/Button';
-import { MonoText } from '../components/StyledText';
+import { LinearGradient } from 'expo';
+import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
+import { MonoText } from '../../components/StyledText';
+import { responsiveScalar, responsiveHeight, responsiveWidth } from '../../util/ResponsiveUtility'
+import HeaderWallet from '../../components/Wallet/HeaderWallet';
 
-export default class InitialScreen extends React.Component {
+export default class UsarCreditoScreen extends React.Component {
   static navigationOptions = {
     header: null,
-  }; 
+  };
 
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={{paddingTop:400, padding: 20}}>
-          <Button onPress={this.navigateLogin}>Já possuo conta</Button>
-          <View style={{paddingTop:15}}>
-            <Button onPress={this.navigateSimular}>Ainda não possuo conta</Button>
-          </View>
-        </View>  
-        </ScrollView>
+      <View style={{flex:1}}>
+        <View style={styles.container}>
+          <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+            <HeaderWallet></HeaderWallet>
+
+            <View style={{
+              flexDirection:'row',
+              flex:1,
+              justifyContent:'space-around',
+              borderBottomColor:'#e4e4e4',
+              borderBottomWidth:1,
+              paddingTop:10,
+              paddingBottom:10
+              }}>
+              <Text>Usar Crédito</Text>
+            </View>
+
+            <TouchableOpacity style={{flexDirection:'row'}}>
+                <MaterialCommunityIcons name="barcode-scan" size={48}></MaterialCommunityIcons>
+                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Pagar Boleto</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{flexDirection:'row'}}>
+                <MaterialCommunityIcons name="wallet" size={48}></MaterialCommunityIcons>
+                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Outra Carteira Digital</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{flexDirection:'row'}}>
+                <MaterialCommunityIcons name="bank" size={48}></MaterialCommunityIcons>
+                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Conta-Corrente</Text>
+            </TouchableOpacity>
+          </ScrollView>
+        </View>
       </View>
+
     );
+  }
+
+  onPressUsarCredito = () => {
+    
   }
 
   _maybeRenderDevelopmentModeWarning() {
@@ -55,16 +87,6 @@ export default class InitialScreen extends React.Component {
     }
   }
 
-  navigateLogin = () => {
-    const {navigate} = this.props.navigation;
-    navigate('Login')
-  };
-
-  navigateSimular = () => {
-      const{navigate} = this.props.navigation;
-      navigate('Simular')
-  }
-
   _handleLearnMorePress = () => {
     WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
   };
@@ -77,12 +99,38 @@ export default class InitialScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  touchableButton: {
-    paddingTop: 200
+  buttonsFooterText: {
+    alignItems:'center', 
+    textAlign: 'center',
+    color:'#456300'
+  },
+  buttonsFooter: {
+    color:'#84bd00',
+    textAlign:'center',
+    alignItems:'center'
   },
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    flex: responsiveScalar(4/5),
+    backgroundColor: '#fbfbfb'
+  },
+  historyContainer: {
+    marginTop:20,
+    marginBottom:10,
+    borderTopColor:'#e4e4e4',
+    borderTopWidth:1
+  },
+  walletTitle: {
+    color:'#fff',
+    fontSize: 14,
+    fontWeight:'100'
+  },
+  historyTitle: {
+    color:'#002d72',
+    fontSize: 21,
+  },
+  balanceText: {
+    color:'#fff',
+    fontSize: 30
   },
   developmentModeText: {
     marginBottom: 20,
@@ -90,14 +138,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 19,
     textAlign: 'center',
-  },
-  contentContainer: {
-    paddingTop: 30,
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
   },
   welcomeImage: {
     width: 100,

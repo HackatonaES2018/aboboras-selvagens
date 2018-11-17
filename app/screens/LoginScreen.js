@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#fbfbfb',
+    backgroundColor: '#fbfbfb'
   },
   developmentModeText: {
     marginBottom: 20,

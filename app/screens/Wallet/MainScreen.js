@@ -9,9 +9,11 @@ import {
   View,
   Button
 } from 'react-native';
-import { WebBrowser, LinearGradient } from 'expo';
+import { LinearGradient } from 'expo';
 import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
 import { MonoText } from '../../components/StyledText';
+import { responsiveScalar, responsiveHeight, responsiveWidth } from '../../util/ResponsiveUtility'
+import HeaderWallet from '../../components/Wallet/HeaderWallet';
 
 export default class MainScreen extends React.Component {
   static navigationOptions = {
@@ -20,54 +22,75 @@ export default class MainScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <LinearGradient
-              colors={['#1e5799', '#3b5998', '#002d72']}
-            >
-            <View style={styles.balanceContainer}>
-                <Text style={styles.walletTitle}>Carteira Portocred</Text>
-                <Text style={styles.balanceText}>R$ 0,00</Text>
+      <View style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+            <HeaderWallet></HeaderWallet>
+
+            <View style={{
+              flexDirection: 'row',
+              flex: 1,
+              justifyContent: 'space-around',
+              borderBottomColor: '#e4e4e4',
+              borderBottomWidth: 1,
+              paddingBottom: 10,
+              paddingTop: 10
+            }}>
+              <TouchableOpacity style={{ flexDirection: 'row' }}>
+                <MaterialCommunityIcons color="green" name="credit-card-plus" size={32}></MaterialCommunityIcons>
+                <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Solicitar Crédito</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={this.onPressUsarCredito} style={{ flexDirection: 'row' }}>
+                <MaterialCommunityIcons color="red" name="bank-transfer-out" size={32}></MaterialCommunityIcons>
+                <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Usar Crédito</Text>
+              </TouchableOpacity>
+
             </View>
-          </LinearGradient>
 
-          <View style={{
-            flexDirection:'row',
-            flex:1,
-            justifyContent:'space-around',
-            borderBottomColor:'#e4e4e4',
-            borderBottomWidth:1,
-            paddingBottom:10,
-            paddingTop:10
+            <View style={{
+              flexDirection: 'row',
+              flex: 1,
+              justifyContent: 'space-around',
+              borderBottomColor: '#e4e4e4',
+              borderBottomWidth: 1,
+              paddingTop: 10,
+              paddingBottom: 10
             }}>
-            <TouchableOpacity style={{flexDirection:'row'}}>
-              <MaterialCommunityIcons color="green" name="credit-card-plus" size={32}></MaterialCommunityIcons>
-              <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Solicitar Crédito</Text>
-            </TouchableOpacity>
+              <Text>Limite de Crédito: R$ 2.000,00</Text>
 
-            <TouchableOpacity style={{flexDirection:'row'}}>
-              <MaterialCommunityIcons color="red" name="bank-transfer-out" size={32}></MaterialCommunityIcons>
-              <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Transferir</Text>
-            </TouchableOpacity>
+            </View>
 
-          </View>
-
-          <View style={{
-            flexDirection:'row',
-            flex:1,
-            justifyContent:'space-around',
-            borderBottomColor:'#e4e4e4',
-            borderBottomWidth:1,
-            paddingTop:10,
-            paddingBottom:10
-            }}>
-            <Text>Limite de Crédito: R$ 2.000,00</Text>
-
-          </View>
-
-        </ScrollView>
+          </ScrollView>
+        </View>
+        <View style={{
+          flex: responsiveScalar(1 / 10),
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          paddingTop: 10,
+          backgroundColor: '#84bd00'
+        }}>
+          <TouchableOpacity style={styles.buttonsFooter}>
+            <MaterialCommunityIcons color="#456300" name="history" size={32}></MaterialCommunityIcons>
+            <Text style={styles.buttonsFooterText}>Histórico</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonsFooter}>
+            <MaterialCommunityIcons color="#456300" name="chart-bar" size={32}></MaterialCommunityIcons>
+            <Text style={styles.buttonsFooterText}>Saldo Devedor</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonsFooter}>
+            <MaterialCommunityIcons color="#456300" name="logout" size={32}></MaterialCommunityIcons>
+            <Text style={styles.buttonsFooterText}>Sair</Text>
+          </TouchableOpacity>
+        </View>
       </View>
+
     );
+  }
+
+  onPressUsarCredito = () => {
+    const { navigate } = this.props.navigation;
+    navigate('UsarCreditoScreen')
   }
 
   _maybeRenderDevelopmentModeWarning() {
@@ -105,26 +128,37 @@ export default class MainScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  buttonsFooterText: {
+    alignItems: 'center',
+    textAlign: 'center',
+    color: '#456300'
+  },
+  buttonsFooter: {
+    color: '#84bd00',
+    textAlign: 'center',
+    alignItems: 'center'
+  },
   container: {
-    flex: 1,
+    flex: responsiveScalar(4 / 5),
     backgroundColor: '#fbfbfb'
   },
   historyContainer: {
-    marginTop:20,
-    marginBottom:10,
-    borderTopColor:'#e4e4e4',
-    borderTopWidth:1
+    marginTop: 20,
+    marginBottom: 10,
+    borderTopColor: '#e4e4e4',
+    borderTopWidth: 1
   },
   walletTitle: {
-    color:'#fff',
-    fontSize: 21,
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '100'
   },
   historyTitle: {
-    color:'#002d72',
+    color: '#002d72',
     fontSize: 21,
   },
   balanceText: {
-    color:'#fff',
+    color: '#fff',
     fontSize: 30
   },
   developmentModeText: {
@@ -133,11 +167,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 19,
     textAlign: 'center',
-  },
-  balanceContainer: {
-    alignItems: 'center',
-    marginTop: 30,
-    marginBottom: 20
   },
   welcomeImage: {
     width: 100,
