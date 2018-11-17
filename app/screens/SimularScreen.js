@@ -13,11 +13,19 @@ import {
 
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
+import CreditoPessoalService from '../services/CreditoPessoalService'
 
 export default class RegisterScreen extends React.Component {
     static navigationOptions = {
         header: null,
     };
+
+    confirmar = async () => {
+        const res = new CreditoPessoalService()
+        const gres = await res.simulacao()
+        console.warn(gres)
+
+    }
 
     render() {
         return (
@@ -29,7 +37,7 @@ export default class RegisterScreen extends React.Component {
                         </View>
 
 
-                        <TouchableOpacity style={{ marginTop: 10 }}>
+                        <TouchableOpacity onPress={this.confirmar} style={{ marginTop: 10 }}>
                             <Text style={{ marginLeft: 30, textAlign: 'center', fontSize: 18, fontFamily: 'lato-regular', color: '#002d72' }}>Confirmar</Text>
                         </TouchableOpacity>
                     </View>
