@@ -15,6 +15,7 @@ import SenhaScreen from '../screens/SenhaScreen';
 import UsarCreditoScreen from '../screens/Wallet/UsarCreditoScreen';
 import Documentos from '../screens/Documentos';
 import LogradouroScreen from '../screens/LogradouroScreen';
+import ContratoScreen from '../screens/Wallet/ContratoScreen'
 
 const LoginStack = createStackNavigator({
   Logradouro: LogradouroScreen,
@@ -29,6 +30,7 @@ const LoginStack = createStackNavigator({
   SimularScreen: SimularScreen,
   ConfirmarCadastroScreen: ConfirmarCadastroScreen,
   Documentos: Documentos,
+  Contrato: ContratoScreen,
   Senha: SenhaScreen
 }, {
 
