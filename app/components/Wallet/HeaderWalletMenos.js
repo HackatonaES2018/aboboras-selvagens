@@ -7,15 +7,15 @@ import {
   View
 } from 'react-native';
 
-export default class HeaderWallet extends React.Component {
+export default class HeaderWalletMais extends React.Component {
   render() {
     return (
       <LinearGradient
         colors={['#002d72', '#002d72', '#002d72']}
       >
         <View style={styles.balanceContainer}>
-          <Text style={styles.walletTitle}>Meu saldo</Text>
-          <Text style={this.props.style}>R$ 0,00</Text>
+            <Text style={styles.walletTitle}>PortoWallet</Text>
+            <Text style={this.props.style}>R$ 796,51</Text>
         </View>
       </LinearGradient>
     );

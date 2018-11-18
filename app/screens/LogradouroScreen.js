@@ -65,7 +65,6 @@ export default class LogradouroScreenç extends React.Component {
     this.setState({ carregado: true })
 
     this.setState({ loading: false, dados })
-
   }
 
   render() {
