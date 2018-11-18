@@ -51,7 +51,7 @@ export default class HomeScreen extends React.Component {
 
   navigateWallet = () => {
     const { navigate } = this.props.navigation;
-    navigate('Wallet_MainScreen')
+    navigate('Wallet')
   };
 
 
