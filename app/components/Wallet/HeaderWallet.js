@@ -11,11 +11,11 @@ export default class HeaderWallet extends React.Component {
   render() {
     return (
       <LinearGradient
-          colors={['#1e5799', '#3b5998', '#002d72']}
-        >
+        colors={['#002d72', '#002d72', '#002d72']}
+      >
         <View style={styles.balanceContainer}>
             <Text style={styles.walletTitle}>PortoWallet</Text>
-            <Text style={styles.balanceText}>R$ 0,00</Text>
+            <Text style={this.props.style}>R$ 0,00</Text>
         </View>
       </LinearGradient>
     );
@@ -24,13 +24,16 @@ export default class HeaderWallet extends React.Component {
 
 const styles = StyleSheet.create({
   walletTitle: {
-    color:'#fff',
+    fontFamily: 'lato-regular',
+    color: '#fff',
     fontSize: 14,
-    fontWeight:'100'
+    fontWeight: '100',
+    marginBottom: 10
   },
   balanceText: {
-    color:'#fff',
-    fontSize: 30
+    fontFamily: 'lato-light',
+    color: '#fff',
+    fontSize: 35
   },
   balanceContainer: {
     alignItems: 'center',

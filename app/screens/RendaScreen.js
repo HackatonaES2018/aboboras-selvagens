@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View  
+  View
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
@@ -15,25 +15,44 @@ import StepIndicator from '../components/StepIndicator'
 
 export default class RendaScreen extends React.Component {
   static navigationOptions = {
-    header: null,
-  }; 
+    title: 'Renda',
+    headerStyle: {
+      marginTop: -24,
+      shadowOpacity: 0,
+      shadowOffset: {
+        height: 0
+      },
+      shadowRadius: 0,
+      borderBottomWidth: 0,
+      elevation: 0,
+      backgroundColor: '#fbfbfb',
+    },
+    headerTintColor: '#002d72',
+    headerTitleStyle: {
+      flex: 1,
+      alignSelf: 'center',
+      textAlign: 'center',
+      fontWeight: '200',
+      fontFamily: 'lato-bold'
+    },
+    headerRight: (<View />)
+  };
 
 
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <StepIndicator currentPosition={3}/>
+        <StepIndicator currentPosition={3} />
+        <View style={{ marginHorizontal: 10, flex: 1 }}>
+          <TextField label="Renda mensal" keyboardType='number-pad' />
 
-          <TextField label="Valor" keyboardType='number-pad' />
-          
-          <View style={{flex: 1, justifyContent: 'flex-end'}}>
-          <Button onPress={() => this.props.navigation.navigate('Wallet_MainScreen')}>
-            Finalizar Cadastro
+          <View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 10 }}>
+            <Button onPress={() => this.props.navigation.navigate('Wallet_MainScreen')}>
+              Finalizar Cadastro
           </Button>
           </View>
-        </ScrollView>
-      </View>
+        </View>
+      </View >
     );
   }
 
@@ -61,5 +80,5 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: 0,
   },
-  
+
 });
