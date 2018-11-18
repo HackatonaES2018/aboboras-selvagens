@@ -25,24 +25,24 @@ export default class MainScreen extends React.Component {
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
             <HeaderWallet style={styles.balanceText}></HeaderWallet>
-          <View style={{
-            flexDirection:'row',
-            flex:1,
-            justifyContent:'space-around',
-            borderBottomColor:'#e4e4e4',
-            borderBottomWidth:1,
-            paddingBottom:10,
-            paddingTop:10
-            }}>
 
-              <TouchableOpacity style={{flexDirection:'row'}} onPress={() => this.props.navigation.navigate('SolicitarCredito')}>
-                <MaterialCommunityIcons color="green" name="credit-card-plus" size={32}></MaterialCommunityIcons>
-                <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Solicitar Crédito</Text>
+            <View style={{
+              flexDirection: 'row',
+              flex: 1,
+              justifyContent: 'space-around',
+              borderBottomColor: '#e4e4e4',
+              borderBottomWidth: 1,
+              paddingBottom: 10,
+              paddingTop: 10
+            }}>
+              <TouchableOpacity style={{ flexDirection: 'row' }}>
+                <MaterialCommunityIcons color="#84bd00" name="credit-card-plus" style={{ marginRight: 10 }} size={32}></MaterialCommunityIcons>
+                <Text style={{ alignItems: 'center', textAlignVertical: 'center', fontFamily: 'lato-regular' }}>Solicitar Crédito</Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={this.onPressUsarCredito} style={{ flexDirection: 'row' }}>
-                <MaterialCommunityIcons color="red" name="bank-transfer-out" size={32}></MaterialCommunityIcons>
-                <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Usar Crédito</Text>
+                <MaterialCommunityIcons color="#84bd00" name="bank-transfer-out" size={32} style={{ marginRight: 10 }}></MaterialCommunityIcons>
+                <Text style={{ alignItems: 'center', textAlignVertical: 'center', fontFamily: 'lato-regular' }}>Usar Crédito</Text>
               </TouchableOpacity>
 
             </View>
@@ -56,7 +56,7 @@ export default class MainScreen extends React.Component {
               paddingTop: 10,
               paddingBottom: 10
             }}>
-              <Text>Limite de Crédito: R$ 2.000,00</Text>
+              <Text style={{ fontFamily: 'lato-regular' }}>Limite de Crédito: R$ 2.000,00</Text>
 
             </View>
 
@@ -127,6 +127,11 @@ export default class MainScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  balanceText: {
+    fontFamily: 'lato-light',
+    color: '#fff',
+    fontSize: 35
+  },
   balanceText: {
     color:'#fff',
     fontSize: 30
