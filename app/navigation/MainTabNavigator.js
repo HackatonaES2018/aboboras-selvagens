@@ -29,7 +29,7 @@ const LoginStack = createStackNavigator({
   Documentos: Documentos,
   Senha: SenhaScreen
 }, {
-    initialRouteName: 'Initial',
+    initialRouteName: 'Wallet_MainScreen',
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#f4511e'
