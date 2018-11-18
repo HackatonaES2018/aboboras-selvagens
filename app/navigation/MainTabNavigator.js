@@ -29,7 +29,6 @@ const LoginStack = createStackNavigator({
   Documentos: Documentos,
   Senha: SenhaScreen
 }, {
-
     initialRouteName: 'Initial',
     defaultNavigationOptions: {
       headerStyle: {
