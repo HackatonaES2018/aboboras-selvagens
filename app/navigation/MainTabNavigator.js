@@ -20,7 +20,7 @@ const LoginStack = createStackNavigator({
   SimularScreen: SimularScreen,
   ConfirmarCadastroScreen: ConfirmarCadastroScreen,
 }, {
-    initialRouteName: 'Initial'
+    initialRouteName: 'ConfirmarCadastroScreen'
   });
 
 

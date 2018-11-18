@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
+import StepIndicator from '../components/StepIndicator'
+
 
 export default class LogradouroScreenç extends React.Component {
   static navigationOptions = {
@@ -19,6 +21,7 @@ export default class LogradouroScreenç extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <StepIndicator currentPosition={1}/>
 
           <TextField label='CEP' />
           
@@ -26,7 +29,6 @@ export default class LogradouroScreenç extends React.Component {
           <Button>
             Próximo
           </Button>
-
           </View>
         </ScrollView>
       </View>

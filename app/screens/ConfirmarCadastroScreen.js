@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
+import StepIndicator from '../components/StepIndicator'
 
 export default class ConfirmarCadastroScreen extends React.Component {
   static navigationOptions = {
@@ -18,6 +19,7 @@ export default class ConfirmarCadastroScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <StepIndicator currentPosition={0}/>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
           <TextField label='Nome' value="Vitor Edgar da Silva" />
@@ -25,8 +27,6 @@ export default class ConfirmarCadastroScreen extends React.Component {
           <TextField label="Data de Nascimento" value="23/10/1997" />
           <TextField label="Tipo documento" value="CNH" />
           <TextField label="Número" value="06606570400" />
-          <TextField label="Senha" secureTextEntry  />
-          <TextField label="Confirmar senha" secureTextEntry />
           
 
           <View style={{paddingTop:30}}>
