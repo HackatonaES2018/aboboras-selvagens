@@ -15,13 +15,12 @@ import { responsiveScalar, responsiveHeight, responsiveWidth } from '../../util/
 import HeaderWallet from '../../components/Wallet/HeaderWallet';
 
 export default class MainScreen extends React.Component {
-  static navigationOptions = {
-    header: null,
-  };
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{
+        flex: 1
+      }}>
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
             <HeaderWallet></HeaderWallet>
@@ -61,26 +60,6 @@ export default class MainScreen extends React.Component {
             </View>
 
           </ScrollView>
-        </View>
-        <View style={{
-          flex: responsiveScalar(1 / 10),
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          paddingTop: 10,
-          backgroundColor: '#84bd00'
-        }}>
-          <TouchableOpacity style={styles.buttonsFooter}>
-            <MaterialCommunityIcons color="#456300" name="history" size={32}></MaterialCommunityIcons>
-            <Text style={styles.buttonsFooterText}>Histórico</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonsFooter}>
-            <MaterialCommunityIcons color="#456300" name="chart-bar" size={32}></MaterialCommunityIcons>
-            <Text style={styles.buttonsFooterText}>Saldo Devedor</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonsFooter}>
-            <MaterialCommunityIcons color="#456300" name="logout" size={32}></MaterialCommunityIcons>
-            <Text style={styles.buttonsFooterText}>Sair</Text>
-          </TouchableOpacity>
         </View>
       </View>
 
