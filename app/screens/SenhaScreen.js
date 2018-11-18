@@ -14,21 +14,41 @@ import StepIndicator from '../components/StepIndicator'
 
 export default class SenhaScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Dados de Acesso',
+    headerStyle: {
+      marginTop: -24,
+      shadowOpacity: 0,
+      shadowOffset: {
+        height: 0
+      },
+      shadowRadius: 0,
+      borderBottomWidth: 0,
+      elevation: 0,
+      backgroundColor: '#fbfbfb',
+    },
+    headerTintColor: '#002d72',
+    headerTitleStyle: {
+      flex: 1,
+      alignSelf: 'center',
+      textAlign: 'center',
+      fontWeight: '200',
+      fontFamily: 'lato-bold'
+    },
+    headerRight: (<View />)
   };
 
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <StepIndicator currentPosition={2}/>
-        
-          <TextField label="Senha" secureTextEntry  />
+          <StepIndicator currentPosition={2} />
+
+          <TextField label="Senha" secureTextEntry />
           <TextField label="Confirmar senha" secureTextEntry />
-          
-          <View style={{flex: 1, justifyContent: 'flex-end'}}>
-          <Button onPress={() => this.props.navigation.navigate('Renda')}>
-            Próximo
+
+          <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+            <Button onPress={() => this.props.navigation.navigate('Renda')}>
+              Próximo
           </Button>
           </View>
         </ScrollView>
@@ -60,5 +80,5 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: 0,
   },
-  
+
 });

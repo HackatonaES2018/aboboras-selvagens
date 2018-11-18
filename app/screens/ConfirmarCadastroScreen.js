@@ -72,30 +72,11 @@ const styles = StyleSheet.create({
   },
   containerCenter: {
     flex: 1,
-    padding: 10,
+    paddingHorizontal: 20,
     backgroundColor: '#fbfbfb',
-  },
-  developmentModeText: {
-    marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center',
   },
   contentContainer: {
     paddingTop: 30,
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 10,
-  },
-  welcomeImage: {
-    width: 320,
-    height: 200,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: 0,
   },
 
 });

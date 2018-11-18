@@ -4,7 +4,6 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import InitialScreen from '../screens/InitialScreen';
 import LoginScreen from '../screens/LoginScreen';
-import RegisterScreen from '../screens/RegisterScreen';
 import SimularScreen from '../screens/SimularScreen';
 import ConfirmarCadastroScreen from '../screens/ConfirmarCadastroScreen';
 import MainScreen from '../screens/Wallet/MainScreen';
@@ -22,7 +21,6 @@ const LoginStack = createStackNavigator({
   Wallet_MainScreen: MainScreen,
   Initial: InitialScreen,
   Login: LoginScreen,
-  Register: RegisterScreen,
   SolicitarCredito: SolicitarCreditoScreen,
   UsarCreditoScreen: UsarCreditoScreen,
   BilletCamera: BilletCamera,
