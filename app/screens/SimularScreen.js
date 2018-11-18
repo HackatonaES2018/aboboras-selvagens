@@ -90,7 +90,7 @@ export default class RegisterScreen extends React.Component {
                                     Limite pré-aprovado de:
                             </Text>
                                 <Text style={{ marginTop: 15, fontSize: 35, fontFamily: 'lato-regular', color: '#84bd00', alignSelf: 'center', marginHorizontal: 50 }}>
-                                    {`R$ ${this.state.dados['cet']['valor-total']}`}
+                                    {`R$ ${this.state.dados['cet']['valor-compra']}`}
                                 </Text>
 
                                 <Text style={{ marginTop: 25, fontSize: 14, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 30 }}>

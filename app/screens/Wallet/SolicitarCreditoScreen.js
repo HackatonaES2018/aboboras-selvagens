@@ -44,6 +44,7 @@ export default class SolicitarCreditoScreen extends React.Component {
         return (
             <View style={styles.container}>
             <View style={styles.contentContainer} contentContainerStyle={styles.contentContainer}>
+            <Text style={{ fontFamily: 'lato-regular' }}>Limite Pré-Aprovado: R$ 872,00</Text>
                     <View style={{width:200}}>
                         <TextField label='Valor (R$)' keyboardType='number' keyboardType='number-pad' />
                     </View>
