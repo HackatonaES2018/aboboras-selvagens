@@ -28,21 +28,21 @@ export default class HomeScreen extends React.Component {
               }
               style={styles.welcomeImage}
             />
-            
+
           </View>
 
           <TextField label='CPF' keyboardType='number' keyboardType='number-pad' />
           <TextField label='Senha' />
-          <Text style={{textAlign:'right', color:'#8d8f8a'}}>Esqueceu sua senha?</Text>
+          <Text style={{ textAlign: 'right', color: '#8d8f8a' }}>Esqueceu sua senha?</Text>
 
-          <View style={{paddingTop:30}}>
-          <Button>
-            Entrar
+          <View style={{ paddingTop: 30 }}>
+            <Button onPress={() => this.props.navigation.navigate('Wallet_MainScreen')} >
+              Entrar
           </Button>
 
-          <TouchableOpacity>
-            <Text style={{paddingTop:30, textAlign:'center', color:'#8d8f8a'}}>Entrar utilizando biometria digital</Text>
-          </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={{ paddingTop: 30, textAlign: 'center', color: '#8d8f8a' }}>Entrar utilizando biometria digital</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
@@ -79,5 +79,5 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: 0,
   },
-  
+
 });
