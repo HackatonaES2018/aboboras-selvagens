@@ -31,7 +31,7 @@ export default class UsarCreditoScreen extends React.Component {
       <View style={{flex:1}}>
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <HeaderWallet></HeaderWallet>
+            <HeaderWallet style={styles.balanceText}></HeaderWallet>
 
             <View style={{
               flexDirection:'row',
@@ -119,6 +119,11 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection:'row',
     marginBottom:20
+  },
+  balanceText: {
+    fontFamily: 'lato-light',
+    color: '#fff',
+    fontSize: 35
   },
   buttonsFooterText: {
     alignItems:'center', 

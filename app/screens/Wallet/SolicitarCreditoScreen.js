@@ -43,7 +43,7 @@ export default class SolicitarCreditoScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-            <ScrollView style={styles.contentContainer} contentContainerStyle={styles.contentContainer}>
+            <View style={styles.contentContainer} contentContainerStyle={styles.contentContainer}>
                     <View style={{width:200}}>
                         <TextField label='Valor (R$)' keyboardType='number' keyboardType='number-pad' />
                     </View>
@@ -56,23 +56,22 @@ export default class SolicitarCreditoScreen extends React.Component {
                             onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
                             <Picker.Item label="12 parcelas" value="12" />
                             <Picker.Item label="24 parcelas" value="24" />
-                            <Picker.Item label="36 parcelas" value="36" />            
+                            <Picker.Item label="36 parcelas" value="36" />
                         </Picker>
                     </View>
 
                     <View style={{paddingTop:10}}>
                         <Text style={{fontSize:20}}>Data da primeira parcela:</Text>
                         <DatePickerComponent/>
-                    </View> 
-
-                    <View style={{flex: 1, justifyContent: 'flex-end'}}>
-                     <Button>
+                    </View>
+                    <View style={{marginTop: responsiveScalar(30)}}>
+                     <Button onPress={() => this.props.navigation.navigate('Contrato')}>
                         Próximo
                      </Button>
                      </View>
 
 
-            </ScrollView>
+            </View>
             </View>
         );
 

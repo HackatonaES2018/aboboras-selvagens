@@ -36,7 +36,7 @@ export default class ContratoScreen extends React.Component {
                     <Text>{this.state.contrato}</Text>
                 </ScrollView>
                 <View style={styles.btn}>
-                    <Button>
+                    <Button onPress={() => this.props.navigation.navigate('MainScreenMais')}>
                         Confirmar
                     </Button>
                 </View>

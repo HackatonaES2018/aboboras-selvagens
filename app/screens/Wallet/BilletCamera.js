@@ -25,7 +25,7 @@ export default class BilletCamera extends React.Component {
   }
 
   onBilletBarcodeReaded = (boleto) => {
-    
+
     if(!this.state.billetReaded) {
       let amount = this.getBilletAmount(boleto.data);
       this.billetPayConfirm(amount);
@@ -65,12 +65,12 @@ export default class BilletCamera extends React.Component {
       [
         {text: 'Ok', onPress: () => {
           const {navigate} = this.props.navigation;
-          navigate('Wallet_MainScreen')
+          navigate('MainScreenMenos')
         }},
       ],
       { cancelable: false }
     )
-    
+
   }
 
   render() {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     marginBottom:20
   },
   buttonsFooterText: {
-    alignItems:'center', 
+    alignItems:'center',
     textAlign: 'center',
     color:'#456300'
   },
