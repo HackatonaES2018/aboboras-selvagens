@@ -27,11 +27,12 @@ export default class UsarCreditoScreen extends React.Component {
   }
 
   render() {
+    const saldo = this.props.navigation.getParam('saldo', "0,00")
     return (
       <View style={{ flex: 1 }}>
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <HeaderWallet style={styles.balanceText} saldo={this.props.navigation.getParam('saldo', "0,00")}></HeaderWallet>
+            <HeaderWallet style={styles.balanceText} saldo={saldo}></HeaderWallet>
 
             <View style={{
               flexDirection: 'row',
@@ -51,17 +52,17 @@ export default class UsarCreditoScreen extends React.Component {
               }
             }>
               <TouchableOpacity onPress={this.onPressPagarBoleto} style={styles.buttons}>
-                <MaterialCommunityIcons name="barcode-scan" size={48}></MaterialCommunityIcons>
+                <MaterialCommunityIcons style={{ marginRight: 10, color: '#002d72' }} name="barcode-scan" size={48}></MaterialCommunityIcons>
                 <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Pagar Boleto</Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.buttons}>
-                <MaterialCommunityIcons name="wallet" size={48}></MaterialCommunityIcons>
+                <MaterialCommunityIcons style={{ marginRight: 10, color: '#002d72' }} name="wallet" size={48}></MaterialCommunityIcons>
                 <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Outra Carteira Digital</Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.buttons}>
-                <MaterialCommunityIcons name="bank" size={48}></MaterialCommunityIcons>
+                <MaterialCommunityIcons style={{ marginRight: 10, color: '#002d72' }} name="bank" size={48}></MaterialCommunityIcons>
                 <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Conta-Corrente</Text>
               </TouchableOpacity>
             </View>

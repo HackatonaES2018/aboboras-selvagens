@@ -47,7 +47,7 @@ export default class RendaScreen extends React.Component {
           <TextField label="Renda mensal" keyboardType='number-pad' />
 
           <View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 10 }}>
-            <Button onPress={() => this.props.navigation.navigate('Wallet_MainScreen')}>
+            <Button onPress={() => this.props.navigation.navigate('Wallet')}>
               Finalizar Cadastro
           </Button>
           </View>

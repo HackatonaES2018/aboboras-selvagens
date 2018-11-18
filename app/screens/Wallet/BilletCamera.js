@@ -26,7 +26,7 @@ export default class BilletCamera extends React.Component {
 
   onBilletBarcodeReaded = (boleto) => {
 
-    if(!this.state.billetReaded) {
+    if (!this.state.billetReaded) {
       let amount = this.getBilletAmount(boleto.data);
       this.billetPayConfirm(amount);
     }
@@ -39,13 +39,13 @@ export default class BilletCamera extends React.Component {
   };
 
   billetPayConfirm = (value) => {
-    if(value > 0) {
+    if (value > 0) {
       Alert.alert(
         'Você deseja pagar este boleto?',
         'Você confirma o pagamento deste boleto no valor de 75,49',
         [
-          {text: 'Cancelar Pagamento', onPress: this.billetPaymentCancelled, style: 'cancel'},
-          {text: 'Pagar', onPress: this.billetPaymentSuccess},
+          { text: 'Cancelar Pagamento', onPress: this.billetPaymentCancelled, style: 'cancel' },
+          { text: 'Pagar', onPress: this.billetPaymentSuccess },
         ],
         { cancelable: false }
       )
@@ -54,7 +54,7 @@ export default class BilletCamera extends React.Component {
 
   billetPaymentCancelled = () => {
     console.warn('Pagameto do boleto cancelado.');
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     navigate('UsarCreditoScreen')
   }
 
@@ -63,10 +63,12 @@ export default class BilletCamera extends React.Component {
       'Boleto foi pago!',
       'Boleto pago com sucesso',
       [
-        {text: 'Ok', onPress: () => {
-          const {navigate} = this.props.navigation;
-          navigate('MainScreenMenos')
-        }},
+        {
+          text: 'Ok', onPress: () => {
+            const { navigate } = this.props.navigation;
+            navigate('Wallet', { saldo: "796,51" })
+          }
+        },
       ],
       { cancelable: false }
     )
@@ -75,34 +77,34 @@ export default class BilletCamera extends React.Component {
 
   render() {
     return (
-      <View style={{flex:1}}>
-          <Camera onBarCodeRead={this.onBilletBarcodeReaded} style={{ flex: 1 }} type={this.state.type}>
-            <View
+      <View style={{ flex: 1 }}>
+        <Camera onBarCodeRead={this.onBilletBarcodeReaded} style={{ flex: 1 }} type={this.state.type}>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: 'transparent',
+              flexDirection: 'row',
+            }}>
+            <TouchableOpacity
               style={{
-                flex: 1,
-                backgroundColor: 'transparent',
-                flexDirection: 'row',
+                flex: 0.1,
+                alignSelf: 'flex-end',
+                alignItems: 'center',
+              }}
+              onPress={() => {
+                this.setState({
+                  type: this.state.type === Camera.Constants.Type.back
+                    ? Camera.Constants.Type.front
+                    : Camera.Constants.Type.back,
+                });
               }}>
-              <TouchableOpacity
-                style={{
-                  flex: 0.1,
-                  alignSelf: 'flex-end',
-                  alignItems: 'center',
-                }}
-                onPress={() => {
-                  this.setState({
-                    type: this.state.type === Camera.Constants.Type.back
-                      ? Camera.Constants.Type.front
-                      : Camera.Constants.Type.back,
-                  });
-                }}>
-                <Text
-                  style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
-                  {' '}Flip{' '}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </Camera>
+              <Text
+                style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
+                {' '}Flip{' '}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </Camera>
       </View>
     );
   }
@@ -110,21 +112,21 @@ export default class BilletCamera extends React.Component {
 
 const styles = StyleSheet.create({
   buttons: {
-    flexDirection:'row',
-    marginBottom:20
+    flexDirection: 'row',
+    marginBottom: 20
   },
   buttonsFooterText: {
-    alignItems:'center',
+    alignItems: 'center',
     textAlign: 'center',
-    color:'#456300'
+    color: '#456300'
   },
   buttonsFooter: {
-    color:'#84bd00',
-    textAlign:'center',
-    alignItems:'center'
+    color: '#84bd00',
+    textAlign: 'center',
+    alignItems: 'center'
   },
   container: {
-    flex: responsiveScalar(4/5),
+    flex: responsiveScalar(4 / 5),
     backgroundColor: '#fbfbfb'
   },
 

@@ -17,6 +17,8 @@ export default class MainScreen extends React.Component {
 
   render() {
     const saldo = this.props.navigation.getParam('saldo', "0,00")
+    const pre = this.props.navigation.getParam('saldo', false) ? "0,00" : "872,00"
+
     return (
       <View style={{
         flex: 1
@@ -55,7 +57,7 @@ export default class MainScreen extends React.Component {
               paddingTop: 10,
               paddingBottom: 10
             }}>
-              <Text style={{ fontFamily: 'lato-regular' }}>Limite Pré-Aprovado: R$ 872,00</Text>
+              <Text style={{ fontFamily: 'lato-regular' }}>{`Limite Pré-Aprovado: R$ ${pre}`}</Text>
 
             </View>
 
