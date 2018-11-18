@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
@@ -19,41 +19,23 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/portocred-azul.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
-            
-          </View>
 
-          <TextField label='CPF' keyboardType='number' keyboardType='number-pad' />
-          <TextField label='Senha' />
-          <Text style={{textAlign:'right', color:'#8d8f8a'}}>Esqueceu sua senha?</Text>
-
+          <TextField label='Nome' value="Vitor Edgar da Silva" />
+          <TextField label='CPF' keyboardType='number' keyboardType='number-pad' value="87268582072" />
+          <TextField label="Data de Nascimento" value="23/10/1997" />
+          <TextField label="Tipo documento" value="CNH" />
+          <TextField label="Número" value="06606570400" />
+          
           <View style={{paddingTop:30}}>
-          <Button onPress={this.navigateWallet}>
-            Entrar
+          <Button onPress={() => this.props.navigation.navigate('Senha')}>
+            Próximo
           </Button>
 
-          <TouchableOpacity>
-            <Text style={{paddingTop:30, textAlign:'center', color:'#8d8f8a'}}>Entrar utilizando biometria digital</Text>
-          </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
     );
   }
-  
-  navigateWallet = () => {
-    const { navigate } = this.props.navigation;
-    navigate('Wallet_MainScreen')
-  };
-
 
 }
 
@@ -61,7 +43,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#fbfbfb'
+    backgroundColor: '#fbfbfb',
   },
   developmentModeText: {
     marginBottom: 20,

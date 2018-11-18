@@ -1,33 +1,31 @@
 import React from 'react';
 import {
   Image,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View  
+  View,
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
-import { WebBrowser } from 'expo';
 import Button from '../components/Button';
 
-export default class RendaScreen extends React.Component {
+export default class SenhaScreen extends React.Component {
   static navigationOptions = {
     header: null,
-  }; 
-
+  };
 
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-          <TextField label="Valor" keyboardType='number-pad' />
+          <TextField label="Senha" secureTextEntry  />
+          <TextField label="Confirmar senha" secureTextEntry />
           
           <View style={{flex: 1, justifyContent: 'flex-end'}}>
-          <Button onPress={() => this.props.navigation.navigate('Wallet_MainScreen')}>
-            Finalizar Cadastro
+          <Button onPress={() => this.props.navigation.navigate('Renda')}>
+            Próximo
           </Button>
           </View>
         </ScrollView>
