@@ -20,8 +20,8 @@ export default class ConfirmarCadastroScreen extends React.Component {
     return (
       <View style={styles.container}>
         <StepIndicator currentPosition={0}/>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
+        <ScrollView style={styles.containerCenter} contentContainerStyle={styles.contentContainer}>
+        
           <TextField label='Nome' value="Vitor Edgar da Silva" />
           <TextField label='CPF' keyboardType='number' keyboardType='number-pad' value="87268582072" />
           <TextField label="Data de Nascimento" value="23/10/1997" />
@@ -47,6 +47,11 @@ export default class ConfirmarCadastroScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: '#fbfbfb',
+  },
+  containerCenter: {
     flex: 1,
     padding: 10,
     backgroundColor: '#fbfbfb',

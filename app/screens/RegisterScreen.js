@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
-
 export default class RegisterScreen extends React.Component {
   static navigationOptions = {
     header: null,

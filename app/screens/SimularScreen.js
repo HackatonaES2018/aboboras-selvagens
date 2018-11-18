@@ -83,7 +83,7 @@ export default class RegisterScreen extends React.Component {
 
                             </View>
                             <View style={{}}>
-                                <Button onPress={() => this.props.navigation.navigate('ConfirmarCadastroScreen')}>Cadastre-se</Button>
+                                <Button onPress={() => this.props.navigation.navigate('Documentos')}>Cadastre-se</Button>
                             </View>
                         </View>
 

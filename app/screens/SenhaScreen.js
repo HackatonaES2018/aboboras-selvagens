@@ -22,7 +22,7 @@ export default class SenhaScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <StepIndicator currentPosition={2}/>
-
+        
           <TextField label="Senha" secureTextEntry  />
           <TextField label="Confirmar senha" secureTextEntry />
           
