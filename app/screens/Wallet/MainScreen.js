@@ -35,7 +35,7 @@ export default class MainScreen extends React.Component {
               paddingBottom: 10,
               paddingTop: 10
             }}>
-              <TouchableOpacity style={{ flexDirection: 'row' }}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('SolicitarCredito')} style={{ flexDirection: 'row' }}>
                 <MaterialCommunityIcons color="#84bd00" name="credit-card-plus" style={{ marginRight: 10 }} size={32}></MaterialCommunityIcons>
                 <Text style={{ alignItems: 'center', textAlignVertical: 'center', fontFamily: 'lato-regular' }}>Solicitar Crédito</Text>
               </TouchableOpacity>
