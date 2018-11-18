@@ -16,6 +16,8 @@ import Documentos from '../screens/Documentos';
 import LogradouroScreen from '../screens/LogradouroScreen';
 import SaldoDevedorScreen from '../screens/Wallet/SaldoDevedorScreen'
 import ContratoScreen from '../screens/Wallet/ContratoScreen'
+import MainScreenMais from '../screens/Wallet/MainScreenMais'
+import MainScreenMenos from '../screens/Wallet/MainScreenMenos'
 
 const LoginStack = createStackNavigator({
   Logradouro: LogradouroScreen,
@@ -30,6 +32,8 @@ const LoginStack = createStackNavigator({
   ConfirmarCadastroScreen: ConfirmarCadastroScreen,
   Documentos: Documentos,
   Senha: SenhaScreen,
+  MainScreenMais: MainScreenMais,
+  MainScreenMenos: MainScreenMenos,
   SaldoDevedorScreen: SaldoDevedorScreen,
   Contrato: ContratoScreen,
 },  {

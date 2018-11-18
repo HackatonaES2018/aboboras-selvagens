@@ -12,9 +12,9 @@ import {
 import { LinearGradient } from 'expo';
 import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
 import { responsiveScalar, responsiveHeight, responsiveWidth } from '../../util/ResponsiveUtility'
-import HeaderWallet from '../../components/Wallet/HeaderWallet';
+import HeaderWalletMenos from '../../components/Wallet/HeaderWalletMenos';
 
-export default class MainScreen extends React.Component {
+export default class MainScreenMenos extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -24,7 +24,7 @@ export default class MainScreen extends React.Component {
       <View style={{ flex: 1 }}>
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <HeaderWallet style={styles.balanceText}></HeaderWallet>
+            <HeaderWalletMenos style={styles.balanceText}></HeaderWalletMenos>
 
             <View style={{
               flexDirection: 'row',
@@ -56,7 +56,7 @@ export default class MainScreen extends React.Component {
               paddingTop: 10,
               paddingBottom: 10
             }}>
-              <Text style={{ fontFamily: 'lato-regular' }}>Limite Pré-Aprovado: R$ 872,00</Text>
+              <Text style={{ fontFamily: 'lato-regular' }}>Limite Pré-Aprovado: R$ 10,00</Text>
 
             </View>
 

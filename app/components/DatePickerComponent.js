@@ -27,7 +27,8 @@ export default class DatePickerComponent extends Component {
             marginLeft: 0
           },
           dateInput: {
-            marginLeft: 36
+            marginLeft: 36,
+              borderRadius: 10
           }
         }}
         onDateChange={(date) => {this.setState({date: date})}}

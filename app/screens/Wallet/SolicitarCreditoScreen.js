@@ -43,7 +43,7 @@ export default class SolicitarCreditoScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-            <ScrollView style={styles.contentContainer}>
+            <View style={styles.contentContainer} contentContainerStyle={styles.contentContainer}>
                     <View style={{width:200}}>
                         <TextField label='Valor (R$)' keyboardType='number' keyboardType='number-pad' />
                     </View>
@@ -60,19 +60,18 @@ export default class SolicitarCreditoScreen extends React.Component {
                         </Picker>
                     </View>
 
-                    <View style={{paddingTop:40}}>
+                    <View style={{paddingTop:10}}>
                         <Text style={{fontSize:20}}>Data da primeira parcela:</Text>
                         <DatePickerComponent/>
                     </View>
-
                     <View style={{marginTop: responsiveScalar(30)}}>
-                     <Button >
+                     <Button onPress={() => this.props.navigation.navigate('Contrato')}>
                         Próximo
                      </Button>
                      </View>
 
 
-            </ScrollView>
+            </View>
             </View>
         );
 
