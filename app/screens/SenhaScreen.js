@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
+import StepIndicator from '../components/StepIndicator'
+
 
 export default class SenhaScreen extends React.Component {
   static navigationOptions = {
@@ -19,7 +21,8 @@ export default class SenhaScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
+        <StepIndicator currentPosition={2}/>
+        
           <TextField label="Senha" secureTextEntry  />
           <TextField label="Confirmar senha" secureTextEntry />
           
