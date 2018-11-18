@@ -30,7 +30,7 @@ export default class ConfirmarCadastroScreen extends React.Component {
           
 
           <View style={{paddingTop:30}}>
-          <Button>
+          <Button onPress={() => this.props.navigation.navigate('Logradouro')}>
             Próximo
           </Button>
 
@@ -40,6 +40,8 @@ export default class ConfirmarCadastroScreen extends React.Component {
       </View>
     );
   }
+
+  
 
 }
 

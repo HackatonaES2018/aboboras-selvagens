@@ -32,11 +32,11 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <TextField label='CPF' keyboardType='number' keyboardType='number-pad' />
-          <TextField label='Senha' />
+          <TextField label='Senha' secureTextEntry />
           <Text style={{ textAlign: 'right', color: '#8d8f8a' }}>Esqueceu sua senha?</Text>
 
           <View style={{ paddingTop: 30 }}>
-            <Button onPress={() => this.props.navigation.navigate('Wallet_MainScreen')} >
+            <Button onPress={this.navigateWallet}>
               Entrar
           </Button>
 
@@ -48,6 +48,12 @@ export default class HomeScreen extends React.Component {
       </View>
     );
   }
+
+  navigateWallet = () => {
+    const { navigate } = this.props.navigation;
+    navigate('Wallet_MainScreen')
+  };
+
 
 }
 

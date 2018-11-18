@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo';
 import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
-import { MonoText } from '../../components/StyledText';
 import { responsiveScalar, responsiveHeight, responsiveWidth } from '../../util/ResponsiveUtility'
 import HeaderWallet from '../../components/Wallet/HeaderWallet';
 
