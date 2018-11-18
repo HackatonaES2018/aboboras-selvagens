@@ -10,6 +10,7 @@ import {
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
 import StepIndicator from '../components/StepIndicator'
+import { responsiveScalar } from "../util/ResponsiveUtility";
 
 export default class ConfirmarCadastroScreen extends React.Component {
   static navigationOptions = {
