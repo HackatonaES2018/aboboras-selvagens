@@ -87,7 +87,7 @@ const LoginStack = createStackNavigator({
   Contrato: ContratoScreen,
   Senha: SenhaScreen
 }, {
-    initialRouteName: 'Wallet',
+    initialRouteName: 'Initial',
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#f4511e'
