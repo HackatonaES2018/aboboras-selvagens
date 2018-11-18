@@ -7,7 +7,6 @@ import {
     Text,
     TouchableOpacity,
     View,
-    Button,
     Slider,
     Picker
 } from 'react-native';
@@ -15,7 +14,8 @@ import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo
 import {responsiveScalar} from '../../util/ResponsiveUtility'
 import HeaderWallet from "../../components/Wallet/HeaderWallet";
 import { TextField } from 'react-native-material-textfield';
-
+import DatePickerComponent from '../../components/DatePickerComponent'
+import Button from '../../components/Button'
 
 export default class SolicitarCreditoScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
@@ -28,6 +28,7 @@ export default class SolicitarCreditoScreen extends React.Component {
         super(props);
         this.state = {
             value: 50,
+            date: ''
         };
     }
 
@@ -41,14 +42,14 @@ export default class SolicitarCreditoScreen extends React.Component {
 
     render() {
         return (
-            <ScrollView>
             <View style={styles.container}>
+            <ScrollView style={styles.contentContainer}>
                     <View style={{width:200}}>
                         <TextField label='Valor' keyboardType='number' keyboardType='number-pad' />
                     </View>
 
                     <View style={styles.parcelasContainer}>
-                        <Text style={{fontSize:20}}>Parcelas</Text>
+                        <Text style={{fontSize:20}}>Parcelas:</Text>
                         <Picker
                             selectedValue={this.state.language}
                             style={{ height: 50, width: 150 }}
@@ -58,8 +59,21 @@ export default class SolicitarCreditoScreen extends React.Component {
                             <Picker.Item label="36 parcelas" value="36" />            
                         </Picker>
                     </View>
-            </View>
+
+                    <View style={{paddingTop:40}}>
+                        <Text style={{fontSize:20}}>Data da primeira parcela:</Text>
+                        <DatePickerComponent/>
+                    </View> 
+
+                    <View style={{flex: 1, justifyContent: 'flex-end'}}>
+                     <Button >
+                        Próximo
+                     </Button>
+                     </View>
+
+
             </ScrollView>
+            </View>
         );
 
     }
@@ -67,13 +81,19 @@ export default class SolicitarCreditoScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container:{
-        flex: responsiveScalar(1),
-        padding: 30
-    },
-
-    parcelasContainer:{
-        marginTop: responsiveScalar(10),
         flex: 1,
-        justifyContent: 'center'
+        padding: 10,
+        backgroundColor: '#fbfbfb'
+    },
+    contentContainer: {
+        paddingTop: 30,
+        flex: 1
+      },
+    parcelasContainer:{
+        marginTop: responsiveScalar(5),
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
     }
 });

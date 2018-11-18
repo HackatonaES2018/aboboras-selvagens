@@ -32,7 +32,7 @@ const LoginStack = createStackNavigator({
   Senha: SenhaScreen
 }, {
 
-    initialRouteName: 'Initial'
+    initialRouteName: 'SolicitarCredito'
 });
 
 
