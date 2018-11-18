@@ -25,26 +25,33 @@ import ContratoScreen from '../screens/Wallet/ContratoScreen'
 
 const TabNavigation = createBottomTabNavigator({
   Wallet: MainScreen,
+  SaldoDevedorScreen: SaldoDevedorScreen,
+  Historico: MainScreen
 },
   {
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
+
+
+        console.warn(focused)
+        console.warn(routeName)
         const { routeName } = navigation.state;
         let iconName;
         switch (routeName) {
-          case 'Home': iconName = 'ios-home'; break;
-          case 'Adiciona': iconName = 'md-add'; break;
-          case 'Perfil': iconName = 'ios-person'; break;
-          default: iconName = 'ios-home';
+          case 'Wallet': iconName = 'wallet'; break;
+          case 'SaldoDevedorScreen': iconName = 'chart-bar'; break;
+          case 'Historico': iconName = 'history'; break;
+          default: iconName = 'wallet';
         }
-
-        return <MaterialCommunityIcons color="#84bd00" name="credit-card-plus" style={{ marginRight: 10 }} size={32} />;
+        let color = "#ccc"
+        if (focused) color = "#002d72"
+        return <MaterialCommunityIcons color={color} name={iconName} style={{ marginRight: 10 }} size={32} />;
       },
     }),
     tabBarOptions: {
       showLabel: false,
-      activeTintColor: '#000',
-      inactiveTintColor: '#000',
+      activeTintColor: '#84bd00',
+      inactiveTintColor: '#fff',
       style: {
         backgroundColor: '#fff',
       },
