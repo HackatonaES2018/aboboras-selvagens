@@ -39,10 +39,6 @@ export default class HomeScreen extends React.Component {
             <Button onPress={this.navigateWallet}>
               Entrar
           </Button>
-
-            <TouchableOpacity>
-              <Text style={{ paddingTop: 30, textAlign: 'center', color: '#8d8f8a' }}>Entrar utilizando biometria digital</Text>
-            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
