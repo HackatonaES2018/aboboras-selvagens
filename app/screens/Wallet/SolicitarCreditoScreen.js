@@ -8,7 +8,8 @@ import {
     TouchableOpacity,
     View,
     Button,
-    Slider
+    Slider,
+    Picker
 } from 'react-native';
 import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
 import {responsiveScalar} from '../../util/ResponsiveUtility'
@@ -46,15 +47,25 @@ export default class SolicitarCreditoScreen extends React.Component {
                     </View>
                     <View style={styles.sliderContainer}>
                         <View style={styles.titleContainer}>
-                            <Text style={styles.title}> Valor </Text>
+                            <Text style={styles.valorText}> Valor </Text>
                         </View>
                         <Slider
-                            step={1}
-                            maximumValue={100}
+                            step={10}
+                            maximumValue={20000}
                             onValueChange={this.change.bind(this)}
                             value={this.state.value}
                         />
                         <Text>{this.state.value}</Text>
+                    </View>
+                    <View style={styles.parcelasContainer}>
+                        <Text>Parcelas</Text>
+                        <Picker
+                            selectedValue={this.state.language}
+                            style={{ height: 50, width: 100 }}
+                            onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+                            <Picker.Item label="Java" value="java" />
+                            <Picker.Item label="JavaScript" value="js" />
+                        </Picker>
                     </View>
                 </View>
             </View>
@@ -73,7 +84,16 @@ const styles = StyleSheet.create({
     titleContainer:{
         alignItems: 'center'
     },
+    valorText:{
+        alignItems: 'center',
+        fontSize: responsiveScalar(3)
+    },
     sliderContainer:{
         marginTop: responsiveScalar(10)
+    },
+    parcelasContainer:{
+        marginTop: responsiveScalar(10),
+        flexDirection: 'row',
+        justifyContent: 'center'
     }
 });

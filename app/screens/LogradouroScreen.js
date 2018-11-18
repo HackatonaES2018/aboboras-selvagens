@@ -5,12 +5,12 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
 
-export default class HomeScreen extends React.Component {
+export default class LogradouroScreenç extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -19,41 +19,19 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/portocred-azul.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
 
-          </View>
-
-          <TextField label='CPF' keyboardType='number' keyboardType='number-pad' />
-          <TextField label='Senha' secureTextEntry />
-          <Text style={{textAlign:'right', color:'#8d8f8a'}}>Esqueceu sua senha?</Text>
-
+          <TextField label='CEP' />
+          
           <View style={{paddingTop:30}}>
-          <Button onPress={this.navigateWallet}>
-            Entrar
+          <Button onPress={() => this.props.navigation.navigate('Senha')}>
+            Próximo
           </Button>
 
-          <TouchableOpacity>
-            <Text style={{paddingTop:30, textAlign:'center', color:'#8d8f8a'}}>Entrar utilizando biometria digital</Text>
-          </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
     );
   }
-
-  navigateWallet = () => {
-    const { navigate } = this.props.navigation;
-    navigate('Wallet_MainScreen')
-  };
-
 
 }
 
@@ -61,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#fbfbfb'
+    backgroundColor: '#fbfbfb',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -85,5 +63,5 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: 0,
   },
-
+  
 });
