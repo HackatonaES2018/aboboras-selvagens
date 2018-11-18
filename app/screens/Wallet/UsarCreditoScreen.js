@@ -1,24 +1,30 @@
 import React from 'react';
 import {
-  Image,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-  Button
+  View
 } from 'react-native';
-import { LinearGradient } from 'expo';
+import { Camera, Permissions } from 'expo';
 import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
-import { MonoText } from '../../components/StyledText';
 import { responsiveScalar, responsiveHeight, responsiveWidth } from '../../util/ResponsiveUtility'
 import HeaderWallet from '../../components/Wallet/HeaderWallet';
 
 export default class UsarCreditoScreen extends React.Component {
+  state = {
+    hasCameraPermission: null,
+    type: Camera.Constants.Type.back,
+  };
+
   static navigationOptions = {
     header: null,
   };
+
+  async componentDidMount() {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
+    this.setState({ hasCameraPermission: status === 'granted' });
+  }
 
   render() {
     return (
@@ -38,21 +44,27 @@ export default class UsarCreditoScreen extends React.Component {
               }}>
               <Text>Usar Crédito</Text>
             </View>
+            
+            <View style={
+              {
+                padding:30
+              }
+            }>
+                <TouchableOpacity onPress={this.onPressPagarBoleto} style={styles.buttons}>
+                    <MaterialCommunityIcons name="barcode-scan" size={48}></MaterialCommunityIcons>
+                    <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Pagar Boleto</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={{flexDirection:'row'}}>
-                <MaterialCommunityIcons name="barcode-scan" size={48}></MaterialCommunityIcons>
-                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Pagar Boleto</Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.buttons}>
+                    <MaterialCommunityIcons name="wallet" size={48}></MaterialCommunityIcons>
+                    <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Outra Carteira Digital</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={{flexDirection:'row'}}>
-                <MaterialCommunityIcons name="wallet" size={48}></MaterialCommunityIcons>
-                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Outra Carteira Digital</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={{flexDirection:'row'}}>
-                <MaterialCommunityIcons name="bank" size={48}></MaterialCommunityIcons>
-                <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Conta-Corrente</Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.buttons}>
+                    <MaterialCommunityIcons name="bank" size={48}></MaterialCommunityIcons>
+                    <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Conta-Corrente</Text>
+                </TouchableOpacity>
+            </View>
           </ScrollView>
         </View>
       </View>
@@ -62,6 +74,11 @@ export default class UsarCreditoScreen extends React.Component {
 
   onPressUsarCredito = () => {
     
+  }
+
+  onPressPagarBoleto = () => {
+    const {navigate} = this.props.navigation;
+    navigate('BilletCamera')
   }
 
   _maybeRenderDevelopmentModeWarning() {
@@ -99,6 +116,10 @@ export default class UsarCreditoScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  buttons: {
+    flexDirection:'row',
+    marginBottom:20
+  },
   buttonsFooterText: {
     alignItems:'center', 
     textAlign: 'center',
@@ -113,97 +134,5 @@ const styles = StyleSheet.create({
     flex: responsiveScalar(4/5),
     backgroundColor: '#fbfbfb'
   },
-  historyContainer: {
-    marginTop:20,
-    marginBottom:10,
-    borderTopColor:'#e4e4e4',
-    borderTopWidth:1
-  },
-  walletTitle: {
-    color:'#fff',
-    fontSize: 14,
-    fontWeight:'100'
-  },
-  historyTitle: {
-    color:'#002d72',
-    fontSize: 21,
-  },
-  balanceText: {
-    color:'#fff',
-    fontSize: 30
-  },
-  developmentModeText: {
-    marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center',
-  },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
-  },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
-  },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
-  },
+
 });
