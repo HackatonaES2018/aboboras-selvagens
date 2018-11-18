@@ -27,7 +27,7 @@ export default class RegisterScreen extends React.Component {
             shadowRadius: 0,
             borderBottomWidth: 0,
             elevation: 0,
-            backgroundColor: '#fff',
+            backgroundColor: '#fbfbfb',
         },
         headerLeft: null,
         headerTintColor: '#002d72',
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 10,
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#fbfbfb',
     },
     contentContainer: {
         paddingTop: 30,

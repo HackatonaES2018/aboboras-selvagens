@@ -40,7 +40,7 @@ export default class Documentos extends React.Component {
             shadowRadius: 0,
             borderBottomWidth: 0,
             elevation: 0,
-            backgroundColor: '#fff',
+            backgroundColor: '#fbfbfb',
         },
         headerTintColor: '#002d72',
         headerTitleStyle: {
@@ -138,7 +138,7 @@ export default class Documentos extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#fbfbfb',
     },
     contentContainer: {
         padding: 10,
