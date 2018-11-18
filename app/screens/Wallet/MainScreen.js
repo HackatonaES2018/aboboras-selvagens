@@ -6,8 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-  Button
+  View
 } from 'react-native';
 import { LinearGradient } from 'expo';
 import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
@@ -59,6 +58,22 @@ export default class MainScreen extends React.Component {
 
             </View>
 
+            <View style={{
+              flexDirection: 'row',
+              flex: 1,
+              justifyContent: 'space-around',
+              borderBottomColor: '#e4e4e4',
+              borderBottomWidth: 1,
+              paddingTop: 10,
+              paddingBottom: 10
+            }}>
+              <TouchableOpacity onPress={this.onPressQRCode} style={{ flexDirection: 'row' }}>
+                <MaterialCommunityIcons color="#84bd00" name="qrcode-scan" size={32} style={{ marginRight: 10 }}></MaterialCommunityIcons>
+                <Text style={{ alignItems: 'center', textAlignVertical: 'center', fontFamily: 'lato-regular' }}>Pagar com QRCode</Text>
+              </TouchableOpacity>
+
+            </View>
+
           </ScrollView>
         </View>
       </View>
@@ -69,6 +84,11 @@ export default class MainScreen extends React.Component {
   onPressUsarCredito = () => {
     const { navigate } = this.props.navigation;
     navigate('UsarCreditoScreen')
+  }
+
+  onPressQRCode = () => {
+    const { navigate } = this.props.navigation;
+    navigate('QRCode')
   }
 
   _maybeRenderDevelopmentModeWarning() {

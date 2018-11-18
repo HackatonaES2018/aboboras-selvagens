@@ -12,7 +12,7 @@ import { MaterialIcons, Foundation, Entypo, MaterialCommunityIcons } from '@expo
 import { responsiveScalar, responsiveHeight, responsiveWidth } from '../../util/ResponsiveUtility'
 import HeaderWallet from '../../components/Wallet/HeaderWallet';
 
-export default class BilletCamera extends React.Component {
+export default class QRCodeCamera extends React.Component {
   state = {
     billetReaded: false,
     hasCameraPermission: null,
@@ -24,13 +24,10 @@ export default class BilletCamera extends React.Component {
     this.setState({ hasCameraPermission: status === 'granted' });
   }
 
-  onBilletBarcodeReaded = (boleto) => {
-
-    if(!this.state.billetReaded) {
-      let amount = this.getBilletAmount(boleto.data);
-      this.billetPayConfirm(amount);
-    }
-
+  onBilletBarcodeReaded = (qrcode) => {
+    console.warn('test');
+    const {navigate} = this.props.navigation;
+    navigate('Contrato')
     this.state.billetReaded = true;
   }
 
@@ -42,7 +39,7 @@ export default class BilletCamera extends React.Component {
     if(value > 0) {
       Alert.alert(
         'Você deseja pagar este boleto?',
-        'Você confirma o pagamento deste boleto no valor de 75,49',
+        'Você confirma o pagamento deste boleto no valor de ' + value,
         [
           {text: 'Cancelar Pagamento', onPress: this.billetPaymentCancelled, style: 'cancel'},
           {text: 'Pagar', onPress: this.billetPaymentSuccess},
@@ -65,12 +62,12 @@ export default class BilletCamera extends React.Component {
       [
         {text: 'Ok', onPress: () => {
           const {navigate} = this.props.navigation;
-          navigate('MainScreenMenos')
+          navigate('Wallet_MainScreen')
         }},
       ],
       { cancelable: false }
     )
-
+    
   }
 
   render() {
@@ -114,7 +111,7 @@ const styles = StyleSheet.create({
     marginBottom:20
   },
   buttonsFooterText: {
-    alignItems:'center',
+    alignItems:'center', 
     textAlign: 'center',
     color:'#456300'
   },
