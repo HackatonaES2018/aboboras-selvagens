@@ -81,7 +81,6 @@ const LoginStack = createStackNavigator({
   SimularScreen: SimularScreen,
   ConfirmarCadastroScreen: ConfirmarCadastroScreen,
   Documentos: Documentos,
-  Senha: SenhaScreen,
   MainScreenMais: MainScreenMais,
   MainScreenMenos: MainScreenMenos,
   SaldoDevedorScreen: SaldoDevedorScreen,

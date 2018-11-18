@@ -56,7 +56,7 @@ export default class MainScreenMenos extends React.Component {
               paddingTop: 10,
               paddingBottom: 10
             }}>
-              <Text style={{ fontFamily: 'lato-regular' }}>Limite Pré-Aprovado: R$ 10,00</Text>
+              <Text style={{ fontFamily: 'lato-regular' }}>Limite Pré-Aprovado: R$ 0,00</Text>
 
             </View>
 

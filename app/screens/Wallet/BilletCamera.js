@@ -42,7 +42,7 @@ export default class BilletCamera extends React.Component {
     if(value > 0) {
       Alert.alert(
         'Você deseja pagar este boleto?',
-        'Você confirma o pagamento deste boleto no valor de ' + value,
+        'Você confirma o pagamento deste boleto no valor de 75,49',
         [
           {text: 'Cancelar Pagamento', onPress: this.billetPaymentCancelled, style: 'cancel'},
           {text: 'Pagar', onPress: this.billetPaymentSuccess},
