@@ -24,7 +24,7 @@ export default class HomeScreen extends React.Component {
               source={
                 __DEV__
                   ? require('../assets/images/portocred-azul.png')
-                  : require('../assets/images/robot-prod.png')
+                  : require('../assets/images/portocred-azul.png')
               }
               style={styles.welcomeImage}
             />
@@ -39,10 +39,6 @@ export default class HomeScreen extends React.Component {
             <Button onPress={this.navigateWallet}>
               Entrar
           </Button>
-
-            <TouchableOpacity>
-              <Text style={{ paddingTop: 30, textAlign: 'center', color: '#8d8f8a' }}>Entrar utilizando biometria digital</Text>
-            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>

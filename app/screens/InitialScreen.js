@@ -24,7 +24,7 @@ export default class InitialScreen extends React.Component {
               source={
                 __DEV__
                   ? require('../assets/images/icon-wallet.png')
-                  : require('../assets/images/robot-prod.png')
+                  : require('../assets/images/icon-wallet.png')
               }
               style={styles.welcomeWalletIcon}
             />
@@ -33,7 +33,7 @@ export default class InitialScreen extends React.Component {
               source={
                 __DEV__
                   ? require('../assets/images/porto-wallet.png')
-                  : require('../assets/images/robot-prod.png')
+                  : require('../assets/images/porto-wallet.png')
               }
               style={styles.welcomeImage}
             />
