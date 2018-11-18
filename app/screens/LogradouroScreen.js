@@ -26,7 +26,7 @@ export default class LogradouroScreenç extends React.Component {
           <TextField label='CEP' />
           
           <View style={{paddingTop:30}}>
-          <Button>
+          <Button onPress={() => this.props.navigation.navigate('Senha')}>
             Próximo
           </Button>
           </View>

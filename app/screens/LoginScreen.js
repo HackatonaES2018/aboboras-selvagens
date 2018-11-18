@@ -36,7 +36,7 @@ export default class HomeScreen extends React.Component {
           <Text style={{textAlign:'right', color:'#8d8f8a'}}>Esqueceu sua senha?</Text>
 
           <View style={{paddingTop:30}}>
-          <Button>
+          <Button onPress={this.navigateWallet}>
             Entrar
           </Button>
 
@@ -48,6 +48,12 @@ export default class HomeScreen extends React.Component {
       </View>
     );
   }
+  
+  navigateWallet = () => {
+    const { navigate } = this.props.navigation;
+    navigate('Wallet_MainScreen')
+  };
+
 
 }
 
