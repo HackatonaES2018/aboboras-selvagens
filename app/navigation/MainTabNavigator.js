@@ -8,6 +8,8 @@ import RegisterScreen from '../screens/RegisterScreen';
 import SimularScreen from '../screens/SimularScreen';
 import ConfirmarCadastroScreen from '../screens/ConfirmarCadastroScreen';
 import MainScreen from '../screens/Wallet/MainScreen';
+import SolicitarCreditoScreen from "../screens/Wallet/SolicitarCreditoScreen";
+import BilletCamera from '../screens/Wallet/BilletCamera';
 import RendaScreen from '../screens/RendaScreen';
 import SenhaScreen from '../screens/SenhaScreen';
 import UsarCreditoScreen from '../screens/Wallet/UsarCreditoScreen';
@@ -21,13 +23,17 @@ const LoginStack = createStackNavigator({
   Initial: InitialScreen,
   Login: LoginScreen,
   Register: RegisterScreen,
+  SolicitarCredito: SolicitarCreditoScreen,
   UsarCreditoScreen: UsarCreditoScreen,
+  BilletCamera: BilletCamera,
   SimularScreen: SimularScreen,
   ConfirmarCadastroScreen: ConfirmarCadastroScreen,
   Documentos: Documentos,
   Senha: SenhaScreen
 }, {
-    initialRouteName: 'Documentos'
-  });
+
+    initialRouteName: 'Initial'
+});
+
 
 export default LoginStack;
