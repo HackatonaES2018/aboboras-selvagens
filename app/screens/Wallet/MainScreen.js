@@ -24,7 +24,7 @@ export default class MainScreen extends React.Component {
       <View style={{ flex: 1 }}>
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <HeaderWallet></HeaderWallet>
+            <HeaderWallet style={styles.balanceText}></HeaderWallet>
           <View style={{
             flexDirection:'row',
             flex:1,
@@ -127,6 +127,10 @@ export default class MainScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  balanceText: {
+    color:'#fff',
+    fontSize: 30
+  },
   buttonsFooterText: {
     alignItems: 'center',
     textAlign: 'center',
