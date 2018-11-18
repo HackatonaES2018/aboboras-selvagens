@@ -25,15 +25,15 @@ export default class MainScreen extends React.Component {
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
             <HeaderWallet style={styles.balanceText}></HeaderWallet>
-            <View style={{padding:10}}>
-            <Text style={{fontSize:25, textAlign:'center', marginTop:50}}>Pagar próxima parcela:</Text>
-                <View style={{marginTop:10}}>
+            <View style={{ padding: 10 }}>
+              <Text style={{ fontSize: 20, textAlign: 'center', marginTop: 30, marginBottom: 10, fontFamily: 'lato-regular' }}>Pagar próxima parcela:</Text>
+              <View style={{ marginTop: 10 }}>
                 <Button>Gerar Boleto</Button>
-                </View>
+              </View>
             </View>
-        </ScrollView>
+          </ScrollView>
         </View>
-        </View>
+      </View>
     );
   }
 
@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fbfbfb',
   },
   balanceText: {
-    color:'#ff6060',
-    fontSize: 30
+    color: '#ff6060',
+    fontSize: 35,
+    fontFamily: 'lato-light'
   },
 });
