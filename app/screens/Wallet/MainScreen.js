@@ -16,13 +16,14 @@ import HeaderWallet from '../../components/Wallet/HeaderWallet';
 export default class MainScreen extends React.Component {
 
   render() {
+    const saldo = this.props.navigation.getParam('saldo', "0,00")
     return (
       <View style={{
         flex: 1
       }}>
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <HeaderWallet style={styles.balanceText} />
+            <HeaderWallet style={styles.balanceText} saldo={saldo} />
 
             <View style={{
               flexDirection: 'row',
@@ -38,7 +39,7 @@ export default class MainScreen extends React.Component {
                 <Text style={{ alignItems: 'center', textAlignVertical: 'center', fontFamily: 'lato-regular' }}>Solicitar Crédito</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={this.onPressUsarCredito} style={{ flexDirection: 'row' }}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('UsarCreditoScreen', { saldo })} style={{ flexDirection: 'row' }}>
                 <MaterialCommunityIcons color="#84bd00" name="bank-transfer-out" size={32} style={{ marginRight: 10 }}></MaterialCommunityIcons>
                 <Text style={{ alignItems: 'center', textAlignVertical: 'center', fontFamily: 'lato-regular' }}>Usar Crédito</Text>
               </TouchableOpacity>
