@@ -9,8 +9,9 @@ import {
   View  
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
-import { WebBrowser } from 'expo';
 import Button from '../components/Button';
+import StepIndicator from '../components/StepIndicator'
+
 
 export default class RendaScreen extends React.Component {
   static navigationOptions = {
@@ -22,6 +23,7 @@ export default class RendaScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <StepIndicator currentPosition={3}/>
 
           <TextField label="Valor" keyboardType='number-pad' />
           

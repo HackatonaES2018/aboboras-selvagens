@@ -12,6 +12,7 @@ import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
 import CepService from "../services/CepService";
 import {responsiveScalar} from "../util/ResponsiveUtility";
+import StepIndicator from '../components/StepIndicator'
 
 export default class LogradouroScreenç extends React.Component {
   static navigationOptions = {
@@ -51,6 +52,8 @@ export default class LogradouroScreenç extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <StepIndicator currentPosition={1}/>
+
 
           <TextField label='CEP' onChangeText={this.change.bind(this)} keyboardType='number' keyboardType='number-pad'/>
 
@@ -72,7 +75,7 @@ export default class LogradouroScreenç extends React.Component {
                                 <TextField label='Número' keyboardType='number' keyboardType='number-pad'/>
                                 <TextField label='Complemento'/>
 
-                                <View style={{paddingTop: responsiveScalar(14)}}>
+                                <View style={{paddingTop: responsiveScalar(6)}}>
                                   <Button onPress={() => this.props.navigation.navigate('Senha')}>
                                       Próximo
                                   </Button>
