@@ -19,8 +19,28 @@ export default class InitialScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.welcomeContainer}>
+            <Image
+              source={
+                __DEV__
+                  ? require('../assets/images/icon-wallet.png')
+                  : require('../assets/images/robot-prod.png')
+              }
+              style={styles.welcomeWalletIcon}
+            />
+
+            <Image
+              source={
+                __DEV__
+                  ? require('../assets/images/porto-wallet.png')
+                  : require('../assets/images/robot-prod.png')
+              }
+              style={styles.welcomeImage}
+            />
+        </View>
+
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={{ paddingTop: 400, padding: 20 }}>
+          <View style={{ paddingTop: 40, padding: 20 }}>
             <Button onPress={this.navigateLogin}>Já possuo conta</Button>
             <View style={{ paddingTop: 15 }}>
               <Button onPress={this.navigateSimular}>Ainda não possuo conta</Button>
@@ -45,11 +65,11 @@ export default class InitialScreen extends React.Component {
 
 const styles = StyleSheet.create({
   touchableButton: {
-    paddingTop: 200
+    paddingTop: 1
   },
   container: {
     flex: 1,
-    backgroundColor: '#fbfbfb',
+    backgroundColor: '#fff',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -67,11 +87,18 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 320,
+    height: 200,
     resizeMode: 'contain',
     marginTop: 3,
-    marginLeft: -10,
+    marginLeft: 0,
+  },
+  welcomeWalletIcon: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    marginTop: 35,
+    marginLeft: 0,
   },
   getStartedContainer: {
     alignItems: 'center',
