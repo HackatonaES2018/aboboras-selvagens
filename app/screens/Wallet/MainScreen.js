@@ -23,7 +23,7 @@ export default class MainScreen extends React.Component {
       }}>
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <HeaderWallet style={styles.balanceText}></HeaderWallet>
+            <HeaderWallet style={styles.balanceText} />
 
             <View style={{
               flexDirection: 'row',
@@ -106,19 +106,15 @@ export default class MainScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  balanceText: {
-    fontFamily: 'lato-light',
-    color: '#fff',
-    fontSize: 35
-  },
-  balanceText: {
-    color:'#fff',
-    fontSize: 30
-  },
   buttonsFooterText: {
     alignItems: 'center',
     textAlign: 'center',
     color: '#456300'
+  },
+  balanceText: {
+    fontFamily: 'lato-light',
+    color: '#fff',
+    fontSize: 35
   },
   buttonsFooter: {
     color: '#84bd00',
@@ -143,10 +139,6 @@ const styles = StyleSheet.create({
   historyTitle: {
     color: '#002d72',
     fontSize: 21,
-  },
-  balanceText: {
-    color: '#fff',
-    fontSize: 30
   },
   developmentModeText: {
     marginBottom: 20,
