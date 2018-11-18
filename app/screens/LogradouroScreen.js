@@ -10,7 +10,7 @@ import {
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
 
-export default class HomeScreen extends React.Component {
+export default class LogradouroScreenç extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -20,11 +20,7 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-          <TextField label='Nome' value="Vitor Edgar da Silva" />
-          <TextField label='CPF' keyboardType='number' keyboardType='number-pad' value="87268582072" />
-          <TextField label="Data de Nascimento" value="23/10/1997" />
-          <TextField label="Tipo documento" value="CNH" />
-          <TextField label="Número" value="06606570400" />
+          <TextField label='CEP' />
           
           <View style={{paddingTop:30}}>
           <Button onPress={() => this.props.navigation.navigate('Senha')}>
