@@ -33,16 +33,16 @@ export default class HomeScreen extends React.Component {
 
           <TextField label='CPF' keyboardType='number' keyboardType='number-pad' />
           <TextField label='Senha' secureTextEntry />
-          <Text style={{textAlign:'right', color:'#8d8f8a'}}>Esqueceu sua senha?</Text>
+          <Text style={{ textAlign: 'right', color: '#8d8f8a' }}>Esqueceu sua senha?</Text>
 
-          <View style={{paddingTop:30}}>
-          <Button onPress={this.navigateWallet}>
-            Entrar
+          <View style={{ paddingTop: 30 }}>
+            <Button onPress={this.navigateWallet}>
+              Entrar
           </Button>
 
-          <TouchableOpacity>
-            <Text style={{paddingTop:30, textAlign:'center', color:'#8d8f8a'}}>Entrar utilizando biometria digital</Text>
-          </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={{ paddingTop: 30, textAlign: 'center', color: '#8d8f8a' }}>Entrar utilizando biometria digital</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
