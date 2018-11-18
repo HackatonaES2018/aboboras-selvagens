@@ -18,6 +18,7 @@ import SenhaScreen from '../screens/SenhaScreen';
 import UsarCreditoScreen from '../screens/Wallet/UsarCreditoScreen';
 import Documentos from '../screens/Documentos';
 import LogradouroScreen from '../screens/LogradouroScreen';
+import SaldoDevedorScreen from '../screens/Wallet/SaldoDevedorScreen'
 import ContratoScreen from '../screens/Wallet/ContratoScreen'
 
 
@@ -70,6 +71,8 @@ const LoginStack = createStackNavigator({
   SimularScreen: SimularScreen,
   ConfirmarCadastroScreen: ConfirmarCadastroScreen,
   Documentos: Documentos,
+  Senha: SenhaScreen,
+  SaldoDevedorScreen: SaldoDevedorScreen,
   Contrato: ContratoScreen,
   Senha: SenhaScreen
 }, {

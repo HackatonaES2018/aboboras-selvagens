@@ -14,8 +14,8 @@ export default class HeaderWallet extends React.Component {
         colors={['#002d72', '#002d72', '#002d72']}
       >
         <View style={styles.balanceContainer}>
-          <Text style={styles.walletTitle}>Meu saldo</Text>
-          <Text style={styles.balanceText}>R$ 0,00</Text>
+            <Text style={styles.walletTitle}>PortoWallet</Text>
+            <Text style={this.props.style}>R$ 0,00</Text>
         </View>
       </LinearGradient>
     );
