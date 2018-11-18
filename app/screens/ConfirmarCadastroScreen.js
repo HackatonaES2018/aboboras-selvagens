@@ -12,7 +12,27 @@ import Button from '../components/Button';
 
 export default class ConfirmarCadastroScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Dados Cadastrais',
+    headerStyle: {
+      marginTop: -24,
+      shadowOpacity: 0,
+      shadowOffset: {
+        height: 0
+      },
+      shadowRadius: 0,
+      borderBottomWidth: 0,
+      elevation: 0,
+      backgroundColor: '#fff',
+    },
+    headerTintColor: '#002d72',
+    headerTitleStyle: {
+      flex: 1,
+      alignSelf: 'center',
+      textAlign: 'center',
+      fontWeight: '200',
+      fontFamily: 'lato-bold'
+    },
+    headerRight: (<View />)
   };
 
   render() {
@@ -25,13 +45,11 @@ export default class ConfirmarCadastroScreen extends React.Component {
           <TextField label="Data de Nascimento" value="23/10/1997" />
           <TextField label="Tipo documento" value="CNH" />
           <TextField label="Número" value="06606570400" />
-          <TextField label="Senha" secureTextEntry  />
-          <TextField label="Confirmar senha" secureTextEntry />
-          
 
-          <View style={{paddingTop:30}}>
-          <Button onPress={() => this.props.navigation.navigate('Logradouro')}>
-            Próximo
+
+          <View style={{ paddingTop: 30 }}>
+            <Button onPress={() => this.props.navigation.navigate('Logradouro')}>
+              Próximo
           </Button>
 
 
@@ -41,7 +59,7 @@ export default class ConfirmarCadastroScreen extends React.Component {
     );
   }
 
-  
+
 
 }
 
@@ -49,7 +67,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#fbfbfb',
+    backgroundColor: '#fff',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -73,5 +91,5 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: 0,
   },
-  
+
 });
