@@ -36,6 +36,8 @@ export default class App extends React.Component {
       ]),
       Font.loadAsync({
         'lato-regular': require('./assets/fonts/Lato-Regular.ttf'),
+        'lato-bold': require('./assets/fonts/Lato-Bold.ttf'),
+
         // This is the font that we are using for our tab bar
         ...Icon.Ionicons.font,
         // We include SpaceMono because we use it in HomeScreen.js. Feel free

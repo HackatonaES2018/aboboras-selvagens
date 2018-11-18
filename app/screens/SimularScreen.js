@@ -17,7 +17,27 @@ import CreditoPessoalService from '../services/CreditoPessoalService'
 
 export default class RegisterScreen extends React.Component {
     static navigationOptions = {
-        header: null,
+        title: 'Simular crédito',
+        headerStyle: {
+            marginTop: -24,
+            shadowOpacity: 0,
+            shadowOffset: {
+                height: 0
+            },
+            shadowRadius: 0,
+            borderBottomWidth: 0,
+            elevation: 0,
+            backgroundColor: '#fbfbfb',
+        },
+        headerLeft: null,
+        headerTintColor: '#002d72',
+        headerTitleStyle: {
+            flex: 1,
+            alignSelf: 'center',
+            textAlign: 'center',
+            fontWeight: '200',
+            fontFamily: 'lato-bold'
+        },
     };
 
     state = {
@@ -66,7 +86,7 @@ export default class RegisterScreen extends React.Component {
                         <View style={{ flex: 1 }}>
                             <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
 
-                                <Text style={{ marginTop: 10, fontSize: 20, fontFamily: 'lato-regular', color: '#002d72', alignSelf: 'center', marginHorizontal: 50 }}>
+                                <Text style={{ fontSize: 20, fontFamily: 'lato-regular', color: '#002d72', alignSelf: 'center', marginHorizontal: 50 }}>
                                     Limite pré-aprovado de:
                             </Text>
                                 <Text style={{ marginTop: 15, fontSize: 35, fontFamily: 'lato-regular', color: '#84bd00', alignSelf: 'center', marginHorizontal: 50 }}>
@@ -82,7 +102,7 @@ export default class RegisterScreen extends React.Component {
 
 
                             </View>
-                            <View style={{}}>
+                            <View style={{ marginBottom: 30 }}>
                                 <Button onPress={() => this.props.navigation.navigate('Documentos')}>Cadastre-se</Button>
                             </View>
                         </View>
@@ -102,7 +122,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 10,
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#fbfbfb',
     },
     contentContainer: {
         paddingTop: 30,

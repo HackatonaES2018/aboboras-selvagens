@@ -10,38 +10,57 @@ import {
 import { TextField } from 'react-native-material-textfield';
 import Button from '../components/Button';
 import StepIndicator from '../components/StepIndicator'
+import { responsiveScalar } from "../util/ResponsiveUtility";
 
 export default class ConfirmarCadastroScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Dados Cadastrais',
+    headerStyle: {
+      marginTop: -24,
+      shadowOpacity: 0,
+      shadowOffset: {
+        height: 0
+      },
+      shadowRadius: 0,
+      borderBottomWidth: 0,
+      elevation: 0,
+      backgroundColor: '#fbfbfb',
+    },
+    headerTintColor: '#002d72',
+    headerTitleStyle: {
+      flex: 1,
+      alignSelf: 'center',
+      textAlign: 'center',
+      fontWeight: '200',
+      fontFamily: 'lato-bold'
+    },
+    headerRight: (<View />)
   };
 
   render() {
     return (
-      <View style={styles.container}>
-        <StepIndicator currentPosition={0}/>
-        <ScrollView style={styles.containerCenter} contentContainerStyle={styles.contentContainer}>
-        
-          <TextField label='Nome' value="Vitor Edgar da Silva" />
-          <TextField label='CPF' keyboardType='number' keyboardType='number-pad' value="87268582072" />
-          <TextField label="Data de Nascimento" value="23/10/1997" />
-          <TextField label="Tipo documento" value="CNH" />
-          <TextField label="Número" value="06606570400" />
-          
+      <ScrollView style={styles.containerCenter} contentContainerStyle={styles.contentContainer}>
+        <StepIndicator currentPosition={0} />
 
-          <View style={{paddingTop:30}}>
+
+        <TextField label='Nome' value="Vitor Edgar da Silva" />
+        <TextField label='CPF' keyboardType='number' keyboardType='number-pad' value="87268582072" />
+        <TextField label="Data de Nascimento" value="23/10/1997" />
+        <TextField label="Tipo documento" value="CNH" />
+        <TextField label="Número" value="06606570400" />
+
+
+
+        <View style={{ marginVertical: 30 }}>
           <Button onPress={() => this.props.navigation.navigate('Logradouro')}>
             Próximo
           </Button>
-
-
-          </View>
-        </ScrollView>
-      </View>
+        </View>
+      </ScrollView>
     );
   }
 
-  
+
 
 }
 
@@ -78,5 +97,5 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: 0,
   },
-  
+
 });

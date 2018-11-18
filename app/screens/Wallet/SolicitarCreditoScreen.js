@@ -45,7 +45,7 @@ export default class SolicitarCreditoScreen extends React.Component {
             <View style={styles.container}>
             <ScrollView style={styles.contentContainer}>
                     <View style={{width:200}}>
-                        <TextField label='Valor' keyboardType='number' keyboardType='number-pad' />
+                        <TextField label='Valor (R$)' keyboardType='number' keyboardType='number-pad' />
                     </View>
 
                     <View style={styles.parcelasContainer}>
