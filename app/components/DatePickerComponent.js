@@ -17,7 +17,7 @@ export default class DatePickerComponent extends Component {
         mode="date"
         placeholder="select date"
         format="DD-MM-YYYY"
-        minDate="18-11-2019"
+        minDate="18-12-2018"
         maxDate="18-01-2020"
         confirmBtnText="Confirmar"
         cancelBtnText="Cancelar"
