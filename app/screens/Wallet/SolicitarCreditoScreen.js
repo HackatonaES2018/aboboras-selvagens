@@ -56,16 +56,16 @@ export default class SolicitarCreditoScreen extends React.Component {
                             onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
                             <Picker.Item label="12 parcelas" value="12" />
                             <Picker.Item label="24 parcelas" value="24" />
-                            <Picker.Item label="36 parcelas" value="36" />            
+                            <Picker.Item label="36 parcelas" value="36" />
                         </Picker>
                     </View>
 
                     <View style={{paddingTop:40}}>
                         <Text style={{fontSize:20}}>Data da primeira parcela:</Text>
                         <DatePickerComponent/>
-                    </View> 
+                    </View>
 
-                    <View style={{flex: 1, justifyContent: 'flex-end'}}>
+                    <View style={{marginTop: responsiveScalar(30)}}>
                      <Button >
                         Próximo
                      </Button>
