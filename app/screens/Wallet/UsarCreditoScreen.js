@@ -28,42 +28,42 @@ export default class UsarCreditoScreen extends React.Component {
 
   render() {
     return (
-      <View style={{flex:1}}>
+      <View style={{ flex: 1 }}>
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-            <HeaderWallet style={styles.balanceText}></HeaderWallet>
+            <HeaderWallet style={styles.balanceText} saldo={this.props.navigation.getParam('saldo', "0,00")}></HeaderWallet>
 
             <View style={{
-              flexDirection:'row',
-              flex:1,
-              justifyContent:'space-around',
-              borderBottomColor:'#e4e4e4',
-              borderBottomWidth:1,
-              paddingTop:10,
-              paddingBottom:10
-              }}>
+              flexDirection: 'row',
+              flex: 1,
+              justifyContent: 'space-around',
+              borderBottomColor: '#e4e4e4',
+              borderBottomWidth: 1,
+              paddingTop: 10,
+              paddingBottom: 10
+            }}>
               <Text>Usar Crédito</Text>
             </View>
-            
+
             <View style={
               {
-                padding:30
+                padding: 30
               }
             }>
-                <TouchableOpacity onPress={this.onPressPagarBoleto} style={styles.buttons}>
-                    <MaterialCommunityIcons name="barcode-scan" size={48}></MaterialCommunityIcons>
-                    <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Pagar Boleto</Text>
-                </TouchableOpacity>
+              <TouchableOpacity onPress={this.onPressPagarBoleto} style={styles.buttons}>
+                <MaterialCommunityIcons name="barcode-scan" size={48}></MaterialCommunityIcons>
+                <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Pagar Boleto</Text>
+              </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttons}>
-                    <MaterialCommunityIcons name="wallet" size={48}></MaterialCommunityIcons>
-                    <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Outra Carteira Digital</Text>
-                </TouchableOpacity>
+              <TouchableOpacity style={styles.buttons}>
+                <MaterialCommunityIcons name="wallet" size={48}></MaterialCommunityIcons>
+                <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Outra Carteira Digital</Text>
+              </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttons}>
-                    <MaterialCommunityIcons name="bank" size={48}></MaterialCommunityIcons>
-                    <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Conta-Corrente</Text>
-                </TouchableOpacity>
+              <TouchableOpacity style={styles.buttons}>
+                <MaterialCommunityIcons name="bank" size={48}></MaterialCommunityIcons>
+                <Text style={{ alignItems: 'center', textAlignVertical: 'center' }}>Conta-Corrente</Text>
+              </TouchableOpacity>
             </View>
           </ScrollView>
         </View>
@@ -73,11 +73,11 @@ export default class UsarCreditoScreen extends React.Component {
   }
 
   onPressUsarCredito = () => {
-    
+
   }
 
   onPressPagarBoleto = () => {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     navigate('BilletCamera')
   }
 
@@ -117,8 +117,8 @@ export default class UsarCreditoScreen extends React.Component {
 
 const styles = StyleSheet.create({
   buttons: {
-    flexDirection:'row',
-    marginBottom:20
+    flexDirection: 'row',
+    marginBottom: 20
   },
   balanceText: {
     fontFamily: 'lato-light',
@@ -126,17 +126,17 @@ const styles = StyleSheet.create({
     fontSize: 35
   },
   buttonsFooterText: {
-    alignItems:'center', 
+    alignItems: 'center',
     textAlign: 'center',
-    color:'#456300'
+    color: '#456300'
   },
   buttonsFooter: {
-    color:'#84bd00',
-    textAlign:'center',
-    alignItems:'center'
+    color: '#84bd00',
+    textAlign: 'center',
+    alignItems: 'center'
   },
   container: {
-    flex: responsiveScalar(4/5),
+    flex: responsiveScalar(4 / 5),
     backgroundColor: '#fbfbfb'
   },
 

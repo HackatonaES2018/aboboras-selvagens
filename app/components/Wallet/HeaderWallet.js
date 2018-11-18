@@ -15,7 +15,7 @@ export default class HeaderWallet extends React.Component {
       >
         <View style={styles.balanceContainer}>
           <Text style={styles.walletTitle}>Meu saldo</Text>
-          <Text style={this.props.style}>R$ 0,00</Text>
+          <Text style={this.props.style}>{`R$ ${this.props.saldo ? this.props.saldo : "0,00"}`}</Text>
         </View>
       </LinearGradient>
     );

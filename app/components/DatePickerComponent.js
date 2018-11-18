@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 import DatePicker from 'react-native-datepicker'
 
 export default class DatePickerComponent extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state = {date:"18-11-2019"}
+    this.state = { date: "18-11-2019" }
   }
 
-  render(){
+  render() {
     return (
-        <DatePicker
-        style={{width: 200}}
+      <DatePicker
+        showIcon={false}
+
+        style={{ width: 200, borderWidth: 0 }}
         date={this.state.date}
         mode="date"
         placeholder="select date"
@@ -28,10 +30,10 @@ export default class DatePickerComponent extends Component {
           },
           dateInput: {
             marginLeft: 36,
-              borderRadius: 10
+            borderWidth: 0
           }
         }}
-        onDateChange={(date) => {this.setState({date: date})}}
+        onDateChange={(date) => { this.setState({ date: date }) }}
       />
     )
   }
