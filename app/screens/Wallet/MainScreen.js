@@ -25,17 +25,17 @@ export default class MainScreen extends React.Component {
         <View style={styles.container}>
           <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
             <HeaderWallet></HeaderWallet>
+          <View style={{
+            flexDirection:'row',
+            flex:1,
+            justifyContent:'space-around',
+            borderBottomColor:'#e4e4e4',
+            borderBottomWidth:1,
+            paddingBottom:10,
+            paddingTop:10
+            }}>
 
-            <View style={{
-              flexDirection:'row',
-              flex:1,
-              justifyContent:'space-around',
-              borderBottomColor:'#e4e4e4',
-              borderBottomWidth:1,
-              paddingBottom:10,
-              paddingTop:10
-              }}>
-              <TouchableOpacity style={{flexDirection:'row'}}>
+              <TouchableOpacity style={{flexDirection:'row'}} onPress={() => this.props.navigation.navigate('SolicitarCredito')}>
                 <MaterialCommunityIcons color="green" name="credit-card-plus" size={32}></MaterialCommunityIcons>
                 <Text style={{alignItems:'center', textAlignVertical: 'center'}}>Solicitar Crédito</Text>
               </TouchableOpacity>
@@ -62,9 +62,9 @@ export default class MainScreen extends React.Component {
 
           </ScrollView>
         </View>
-        <View style={{flex:responsiveScalar(1/10), 
-          flexDirection:'row', 
-          justifyContent:'space-around', 
+        <View style={{flex:responsiveScalar(1/10),
+          flexDirection:'row',
+          justifyContent:'space-around',
           paddingTop:10,
           backgroundColor: '#84bd00'
           }}>
@@ -127,7 +127,7 @@ export default class MainScreen extends React.Component {
 
 const styles = StyleSheet.create({
   buttonsFooterText: {
-    alignItems:'center', 
+    alignItems:'center',
     textAlign: 'center',
     color:'#456300'
   },
