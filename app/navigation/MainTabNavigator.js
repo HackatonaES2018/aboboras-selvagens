@@ -32,8 +32,17 @@ const LoginStack = createStackNavigator({
   Senha: SenhaScreen
 }, {
 
-    initialRouteName: 'Initial'
-});
+    initialRouteName: 'Initial',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#f4511e'
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+  });
 
 
 export default LoginStack;

@@ -30,7 +30,27 @@ var radio_props = [
 
 export default class Documentos extends React.Component {
     static navigationOptions = {
-        header: null,
+        title: 'Documentos',
+        headerStyle: {
+            marginTop: -24,
+            shadowOpacity: 0,
+            shadowOffset: {
+                height: 0
+            },
+            shadowRadius: 0,
+            borderBottomWidth: 0,
+            elevation: 0,
+            backgroundColor: '#fff',
+        },
+        headerTintColor: '#002d72',
+        headerTitleStyle: {
+            flex: 1,
+            alignSelf: 'center',
+            textAlign: 'center',
+            fontWeight: '200',
+            fontFamily: 'lato-bold'
+        },
+        headerRight: (<View />)
     };
 
 
@@ -70,17 +90,17 @@ export default class Documentos extends React.Component {
                     </View>
                     :
                     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-                        <Text adjustsFontSizeToFit style={{ textAlignVertical: 'center', marginTop: 25, fontSize: 15, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 10 }}>
-                            Para presseguirmos, precisamos que
+                        <Text adjustsFontSizeToFit style={{ textAlignVertical: 'center', marginTop: 5, fontSize: 15, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 5 }}>
+                            Para presseguirmos, precisamos que você
                     </Text>
-                        <Text adjustsFontSizeToFit style={{ textAlignVertical: 'center', marginTop: 3, fontSize: 15, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 10 }}>
-                            você envie uma foto de um dos
+                        <Text adjustsFontSizeToFit style={{ textAlignVertical: 'center', marginTop: 3, fontSize: 15, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 5 }}>
+                            envie uma foto de um dos seguintes
                     </Text>
-                        <Text adjustsFontSizeToFit style={{ textAlignVertical: 'center', marginTop: 3, fontSize: 15, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 10 }}>
-                            seguintes documentos.
+                        <Text adjustsFontSizeToFit style={{ textAlignVertical: 'center', marginTop: 3, fontSize: 15, fontFamily: 'lato-regular', alignSelf: 'center', color: '#002d72', marginHorizontal: 5 }}>
+                            documentos.
                     </Text>
 
-                        <View style={{ marginTop: 20 }}>
+                        <View style={{ marginTop: 30 }}>
                             <RadioForm
                                 radio_props={radio_props}
                                 initial={0}
@@ -101,7 +121,7 @@ export default class Documentos extends React.Component {
                                 }
                             </TouchableOpacity>
                         </View>
-                        <View style={{ justifyContent: 'flex-end', marginBottom: 10 }}>
+                        <View style={{ justifyContent: 'flex-end', marginBottom: 30 }}>
                             <Button onPress={() => this.props.navigation.navigate('ConfirmarCadastroScreen')}>Enviar</Button>
                         </View>
                     </ScrollView>

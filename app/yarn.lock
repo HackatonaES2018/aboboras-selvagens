@@ -5510,6 +5510,13 @@ react-native-simple-radio-button@^2.7.3:
   resolved "https://registry.yarnpkg.com/react-native-simple-radio-button/-/react-native-simple-radio-button-2.7.3.tgz#c7227c0f963d6bbcfa245255d18a5a8b98fde41f"
   integrity sha512-kiYRarFj7PXzV9fbQwMBiYwS4YnhrR4NZGT68atlFIoNFxZLrt5OMCDqXZqu6R6bUWKLndzPpO/nhXc6/OU1Mg==
 
+react-native-step-indicator@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/react-native-step-indicator/-/react-native-step-indicator-0.0.9.tgz#939b78b43c131c048cf52493c4ed8a1bbc8ce034"
+  integrity sha512-oiHYIMNrSePamQHRE1rf+9NfrY7LorEOIzjI3ya5nfmpGW2pBxjbRDQgZboVPpi5hradLqadw5qVb/CAOGypmQ==
+  dependencies:
+    prop-types "^15.6.0"
+
 react-native-svg@8.0.8:
   version "8.0.8"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-8.0.8.tgz#5d4c636751d9db2d98a9b3cfc4ef45c4eac65d60"
