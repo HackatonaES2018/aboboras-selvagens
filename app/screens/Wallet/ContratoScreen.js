@@ -28,6 +28,11 @@ export default class ContratoScreen extends React.Component {
             this.setState({ contrato: result })
         }
 
+    onPressConfirmar() {
+        const {navigate} = this.props.navigation;
+        navigate('UsarCreditoScreen')
+    }
+
 
     render() {
         return (

@@ -20,6 +20,7 @@ import Documentos from '../screens/Documentos';
 import LogradouroScreen from '../screens/LogradouroScreen';
 import SaldoDevedorScreen from '../screens/Wallet/SaldoDevedorScreen'
 import ContratoScreen from '../screens/Wallet/ContratoScreen'
+import QRCodeCamera from '../screens/Wallet/QRCodeCamera';
 
 
 
@@ -74,7 +75,8 @@ const LoginStack = createStackNavigator({
   Senha: SenhaScreen,
   SaldoDevedorScreen: SaldoDevedorScreen,
   Contrato: ContratoScreen,
-  Senha: SenhaScreen
+  Senha: SenhaScreen,
+  QRCode: QRCodeCamera
 }, {
     initialRouteName: 'Wallet',
     defaultNavigationOptions: {
